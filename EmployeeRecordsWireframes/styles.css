@@ -51,19 +51,31 @@ h1 {
 .action-button,
 .add-button,
 .assign-button {
+    display: inline-block; /* Add this */
     padding: 8px 12px;
     border-radius: 4px;
-    width:125px;
+    width: 125px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+    transition: background-color 0.3s ease;
+    text-align: center; /* Add this */
+    text-decoration: none; /* Add this */
 }
 
 .add-button {
-    background-color: #b00000; /* Dark red button */
+    background-color: #b00000;
     color: white;
     border: none;
-    margin-bottom:10px;
-    margin-left:45%;
+    margin-bottom: 10px;
+    margin-left: 45%;
+    display: block; /* Add this if you want it centered as a standalone button */
+}
+
+/* Style for anchor tags specifically */
+a.action-button,
+a.add-button,
+a.assign-button {
+    text-decoration: none;
+    color: inherit;
 }
 
 .add-button:hover {

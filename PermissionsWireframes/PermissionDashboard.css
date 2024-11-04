@@ -57,15 +57,22 @@ h2 {
     font-weight: bold;
 }
 
+a {
+    display: inline-block; /* Ensures links act like buttons */
+    text-decoration: none; /* Removes underline */
+    color: inherit; /* Keeps the button text color */
+}
+
 .action-button,
 .add-button,
 .assign-button {
+    display: inline-block; /* Ensures buttons are inline */
     padding: 8px 12px;
     border-radius: 4px;
     cursor: pointer;
-    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+    transition: background-color 0.3s ease;
+    text-align: center; /* Centers text inside buttons */
 }
-
 .add-button {
     background-color: #b00000; /* Dark red button */
     color: white;

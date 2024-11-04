@@ -3,61 +3,32 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Master Index</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Bullseye Sporting Goods - Login</title>
+    <link rel="stylesheet" href="login.css">
 </head>
 <body>
-    <div>
-        <h1>Master Index</h1>
-        
-        <h2>Employee Records</h2>
-        <ul>
-            <li><a href="EmployeeRecordsWireframes/addemployee.html">Add Employee</a></li>
-            <li><a href="EmployeeRecordsWireframes/editemployee.html">Edit Employee</a></li>
-            <li><a href="EmployeeRecordsWireframes/viewemployee.html">View Employee</a></li>
-        </ul>
 
-        <h2>Inventory Management</h2>
-        <ul>
-            <li><a href="InventoryManagement/InventoryDashboard.html">Inventory Dashboard</a></li>
-            <li><a href="InventoryManagement/InventoryItemForm.html">Inventory Item Form</a></li>
-        </ul>
+    <!-- Main Container for Login Page -->
+    <div class="login-container">
 
-        <h2>Location Records</h2>
-        <ul>
-            <li><a href="LocationRecords/locationforms.html">Location Forms</a></li>
-            <li><a href="LocationRecords/locations.html">Locations</a></li>
-        </ul>
+        <!-- Header Section with Logo and Name -->
+        <div class="login-header">
+            <img src="bullseye.png" alt="Bullseye Sporting Goods Logo" class="logo">
+            <h1>Bullseye Sporting Goods</h1>
+        </div>
 
-        <h2>Login Wireframes</h2>
-        <ul>
-            <li><a href="LoginWireframes/login.html">Login Wireframes Login HTML</a></li>
-        </ul>
+        <!-- Login Form -->
+        <form action="/login" method="post">
+            <label for="username">Username</label>
+            <input type="text" id="username" name="username" required placeholder="Enter your username">
 
-        <h2>Permissions Wireframes</h2>
-        <ul>
-            <li><a href="PermissionsWireframes/AddPermission.html">Add Permission</a></li>
-            <li><a href="PermissionsWireframes/AddPermissionRole.html">Add Permission Role</a></li>
-            <li><a href="PermissionsWireframes/AssignPermissionsToRole.html">Assign Permissions to Role</a></li>
-            <li><a href="PermissionsWireframes/AssignPermissionToEmp.html">Assign Permission to Employee</a></li>
-            <li><a href="PermissionsWireframes/EditPermission.html">Edit Permission</a></li>
-            <li><a href="PermissionsWireframes/EditPermissionRole.html">Edit Permission Role</a></li>
-        </ul>
+            <label for="password">Password</label>
+            <input type="password" id="password" name="password" required placeholder="Enter your password">
 
-        <h2>Supplier Orders Backorders</h2>
-        <ul>
-            <li><a href="SupplierOrdersBackorders/addItemBackorder.html">Add Item Backorder</a></li>
-            <li><a href="SupplierOrdersBackorders/assignBackorderToStore.html">Assign Backorder to Store Order</a></li>
-            <li><a href="SupplierOrdersBackorders/createrSupplierOrder.html">Create Supplier Order</a></li>
-            <li><a href="SupplierOrdersBackorders/receiveSupplierOrder.html">Receive Supplier Order</a></li>
-            <li><a href="SupplierOrdersBackorders/viewBackorders.html">View Backorders</a></li>
-        </ul>
+            <a href="Dashboard/dashboard.html" class="button">Login (Go to Dashboard)</a>
+        </form>
 
-        <h2>Supplier Records</h2>
-        <ul>
-            <li><a href="SupplierRecords/supplierforms.html">Supplier Forms</a></li>
-            <li><a href="SupplierRecords/viewsupplier.html">View Supplier</a></li>
-        </ul>
     </div>
+
 </body>
 </html>

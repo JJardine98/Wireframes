@@ -199,3 +199,20 @@ body {
 .logout-button:hover {
     background-color: #e6b800;
 }
+
+menu-button {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: #772953;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    text-decoration: none;
+    transition: background-color 0.3s;
+}
+
+.menu-button:hover {
+    background-color: #621845;
+}

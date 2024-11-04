@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dashboard</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+
+        body {
+            background-color: #f5f5f5;
+        }
+
+        .dashboard-container {
+            max-width: 800px;
+            margin: 40px auto;
+            padding: 20px;
+        }
+
+        .welcome-text {
+            font-size: 1.2rem;
+            margin-bottom: 30px;
+            color: #333;
+        }
+
+        .menu-grid {
+            display: grid;
+            gap: 15px;
+        }
+
+        .menu-button {
+            display: flex;
+            align-items: center;
+            padding: 15px 20px;
+            background-color: #772953;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            text-decoration: none;
+            transition: background-color 0.3s;
+        }
+
+        .menu-button:hover {
+            background-color: #621845;
+        }
+
+        .menu-icon {
+            width: 24px;
+            height: 24px;
+            margin-right: 15px;
+        }
+
+        .menu-text {
+            font-size: 1rem;
+        }
+
+        /* Icons using emoji or unicode symbols */
+        .icon-store::before {
+            content: "📦";
+        }
+
+        .icon-emergency::before {
+            content: "🚨";
+        }
+
+        .icon-inventory::before {
+            content: "📋";
+        }
+
+        .icon-backorder::before {
+            content: "📝";
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard-container">
+        <div class="welcome-text">
+            Hello, jperez! Where would you like to go?
+        </div>
+        
+        <div class="menu-grid">
+
+            <a href="../index.html" class="menu-button">
+                <span class="menu-text">Login Screen</span>
+            </a>
+
+            <a href="../InventoryManagement/InventoryDashboard.html" class="menu-button">
+                <span class="menu-text">Inventory Management (All Permission Levels)</span>
+            </a>
+
+            <a href="../PermissionsWireframes/PermissionDashboard.html" class="menu-button">
+                <span class="menu-text">System Permissions (Admin)</span>
+            </a>
+
+            <a href="../SupplierOrdersBackorders/viewSupplierOrder.html" class="menu-button">
+                <span class="menu-text">Supplier Orders</span>
+            </a>
+
+            <a href="../SupplierOrdersBackorders/viewBackorders.html" class="menu-button">
+                <span class="menu-text">Backorder Management</span>
+            </a>
+
+            <a href="../LocationRecords/locations.html" class="menu-button">
+                <span class="menu-text">Location Records (Admin)</span>
+            </a>
+
+            <a href="../EmployeeRecordsWireframes/viewemployee.html" class="menu-button">
+                <span class="menu-text">Employee Records (Admin)</span>
+            </a>
+
+            <a href="../SupplierRecords/viewsupplier.html" class="menu-button">
+                <span class="menu-text">Supplier Records (Admin)</span>
+            </a>
+        </div>
+    </div>
+</body>
+</html>
