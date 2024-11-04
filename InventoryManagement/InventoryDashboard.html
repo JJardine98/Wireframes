@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Inventory Manager</title>
+</head>
+<body>
+    <header class="header">
+        <p>User: jperez</p>
+        <p>Access Level: Store Manager</p>
+        <select id="location" required>
+            <option value="" disabled selected>Select a location</option>
+            <option value="Saint John Retail">Saint John Retail</option>
+            <option value="Sussex Retail">Sussex Retail</option>
+            <option value="Moncton Retail">Moncton Retail</option>
+            <option value="Dieppe Retail">Dieppe Retail</option>
+            <option value="Oromocto Retail">Oromocto Retail</option>
+            <option value="Fredericton Retail">Fredericton Retail</option>
+            <option value="Miramichi Retail">Miramichi Retail</option>
+            <option value="Warehouse">Warehouse</option>
+        
+        </select>
+    </header>
+
+    <h1>Inventory Manager</h1>
+
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Scan Barcode, Search by Description or Enter SKU/Item ID">
+    </div>
+
+    <button class="button">Add Inventory Item</button>
+    
+    <div class="product-grid">
+        <div class="product-card">
+            <div class="product-id">10000</div>
+            <div class="product-title">Jetspeed FT1 Senior Ice Hockey Skates</div>
+            <div class="product-details">
+                <span>SKU#: 60000</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Weight: 5.00 LBS</div>
+            <div class="stock-info">Category: Sports Equipment </div>
+            <div class="price">$999.99 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">10013</div>
+            <div class="product-title">Vapor 1X Lite Griptac Senior Hockey Stick</div>
+            <div class="product-details">
+                <span>SKU#: 60013</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Weight: 3.00 LBS</div>
+            <div class="stock-info">Case Size: 20</div>
+            <div class="price">$339.99</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">10025</div>
+            <div class="product-title">Re-Akt 200 Hockey Helmet Combo</div>
+            <div class="product-details">
+                <span>SKU#: 60025</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Weight: 3.00 LBS</div>
+            <div class="stock-info">Case Size: 10</div>
+            <div class="price">$399.99</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">1000402560</div>
+            <div class="product-title">Temporary Item</div>
+            <div class="product-details">
+                <span>UPC#: 8247</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Aisle: 6, Shelf: 3</div>
+            <div class="stock-info">In Stock: 2450</div>
+            <div class="price">$45.97 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">1000402560</div>
+            <div class="product-title">Temporary Item</div>
+            <div class="product-details">
+                <span>UPC#: 8247</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Aisle: 6, Shelf: 3</div>
+            <div class="stock-info">In Stock: 2450</div>
+            <div class="price">$45.97 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">1000402560</div>
+            <div class="product-title">Temporary Item</div>
+            <div class="product-details">
+                <span>UPC#: 8247</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Aisle: 6, Shelf: 3</div>
+            <div class="stock-info">In Stock: 2450</div>
+            <div class="price">$45.97 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">1000402560</div>
+            <div class="product-title">Temporary Item</div>
+            <div class="product-details">
+                <span>UPC#: 8247</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Aisle: 6, Shelf: 3</div>
+            <div class="stock-info">In Stock: 2450</div>
+            <div class="price">$45.97 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">1000402560</div>
+            <div class="product-title">Temporary Item</div>
+            <div class="product-details">
+                <span>UPC#: 8247</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Aisle: 6, Shelf: 3</div>
+            <div class="stock-info">In Stock: 2450</div>
+            <div class="price">$45.97 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">1000402560</div>
+            <div class="product-title">Temporary Item</div>
+            <div class="product-details">
+                <span>UPC#: 8247</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Aisle: 6, Shelf: 3</div>
+            <div class="stock-info">In Stock: 2450</div>
+            <div class="price">$45.97 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">1000402560</div>
+            <div class="product-title">Temporary Item</div>
+            <div class="product-details">
+                <span>UPC#: 8247</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Aisle: 6, Shelf: 3</div>
+            <div class="stock-info">In Stock: 2450</div>
+            <div class="price">$45.97 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">1000402560</div>
+            <div class="product-title">Temporary Item</div>
+            <div class="product-details">
+                <span>UPC#: 8247</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Aisle: 6, Shelf: 3</div>
+            <div class="stock-info">In Stock: 2450</div>
+            <div class="price">$45.97 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-id">1000402560</div>
+            <div class="product-title">Temporary Item</div>
+            <div class="product-details">
+                <span>UPC#: 8247</span>
+            </div>
+            <img src="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100' height='100'%3E%3Crect width='100' height='100' fill='%23f0f0f0'/%3E%3Ctext x='50%25' y='50%25' text-anchor='middle' dy='.3em' fill='%23666'%3ETemp Item%3C/text%3E%3C/svg%3E" class="product-image" alt="Paint">
+            <div class="location-tag">Aisle: 6, Shelf: 3</div>
+            <div class="stock-info">In Stock: 2450</div>
+            <div class="price">$45.97 EA</div>
+            <div class="action-buttons">
+                <button class="button">Edit</button>
+                <button class="button">Delete</button>
+            </div>
+        </div>
+        <!-- More product cards can be added here -->
+    </div>
+</body>
+</html>

@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Assign Permissions to Employee - Bullseye Sporting Goods</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="assign-permissions-container">
+        <h1>Assign Permission Level</h1>
+
+        <form id="assignPermissionsForm">
+            <!-- Employee Dropdown -->
+            <label for="employeeSelect">Select Employee:</label>
+            <select id="employeeSelect" name="employeeSelect" required>
+                <option value="">-- Select an Employee --</option>
+                <option value="employee1">Chris Patstone</option>
+            </select>
+
+            <!-- Permissions Checkboxes -->
+            <label>Select Permissions:</label>
+            <div class="permissions-checkboxes">
+                <label><input type="checkbox" name="permissions" value="view_inventory"> 1 - Admin</label>
+                <label><input type="checkbox" name="permissions" value="edit_inventory"> 2 - Management</label>
+                <label><input type="checkbox" name="permissions" value="manage_users"> 3 - Warehouse Manager</label>
+                <label><input type="checkbox" name="permissions" value="manage_users"> 4 - Store Manager</label>
+                <label><input type="checkbox" name="permissions" value="manage_users"> 5 - Warehouse Employee</label>
+                <label><input type="checkbox" name="permissions" value="manage_users"> 6 - Store Employee</label>
+
+            </div>
+
+            <button type="submit" class="form-button">Assign Permission Level</button>
+        </form>
+    </div>
+</body>
+</html>

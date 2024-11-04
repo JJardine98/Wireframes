@@ -1,0 +1,96 @@
+/* General Reset */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body Styling */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light gray background for contrast */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #333333; /* Dark gray text for readability */
+}
+
+/* Container for Form */
+.employee-form-container {
+    width: 500px; /* Match width with other containers */
+    background-color: #ffffff; /* White background for the form */
+    padding: 20px; /* Inner spacing */
+    border-radius: 8px; /* Rounded corners */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+    color: #333333; /* Dark gray text */
+    display: flex; /* Flex layout for stacking elements */
+    flex-direction: column; /* Column direction for child elements */
+}
+
+/* Header */
+.employee-form-container h1 {
+    text-align: center; /* Centered header */
+    margin-bottom: 20px; /* Space below the header */
+    color: #b00000; /* Dark red for main header */
+}
+
+/* Form Fields */
+.employee-form-container label {
+    margin-top: 10px; /* Space above label */
+    margin-bottom: 5px; /* Space below label */
+    font-weight: bold; /* Bold font for labels */
+    color: #333333; /* Dark gray text for labels */
+}
+
+.employee-form-container input[type="text"],
+.employee-form-container input[type="email"],
+.employee-form-container select {
+    width: 100%; /* Full width inputs */
+    padding: 8px; /* Inner padding */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px; /* Rounded corners */
+    background-color: #ffffff; /* White background for inputs */
+    color: #000000; /* Black text for inputs */
+    margin-bottom: 10px; /* Space below inputs */
+    outline: none; /* Remove outline */
+    transition: border-color 0.3s ease; /* Smooth border transition */
+}
+
+/* Focus State for Inputs */
+.employee-form-container input:focus,
+.employee-form-container select:focus {
+    border-color: #b00000; /* Dark red border on focus */
+}
+
+/* Buttons */
+.employee-form-container .assign-button,
+.employee-form-container .secondary-button {
+    padding: 8px 12px; /* Padding for buttons */
+    border-radius: 4px; /* Rounded corners */
+    width:470px;
+    cursor: pointer; /* Pointer cursor for buttons */
+    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+/* Assign Button */
+.employee-form-container .assign-button {
+    background-color: #b00000; /* Dark red background */
+    color: #ffffff; /* White text */
+    border: none; /* No border */
+}
+
+.employee-form-container .assign-button:hover {
+    background-color: #900000; /* Slightly darker red on hover */
+}
+
+/* Secondary Button */
+.employee-form-container .secondary-button {
+    background-color: #eee; /* Light gray for secondary buttons */
+    color: #333333; /* Dark gray text for secondary buttons */
+    border: 1px solid #ddd; /* Light border */
+}
+
+.employee-form-container .secondary-button:hover {
+    background-color: #ddd; /* Darker gray on hover */
+    border-color: #ccc; /* Darker border on hover */
+}

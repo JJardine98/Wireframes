@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>View Suppliers</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+
+        .suppliers-container {
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        h1 {
+            color: #b00000;
+            margin-bottom: 20px;
+        }
+
+        .add-button {
+            background-color: #b00000;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 4px;
+            cursor: pointer;
+            margin-bottom: 20px;
+        }
+
+        .suppliers-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+
+        .suppliers-table th, 
+        .suppliers-table td {
+            padding: 12px;
+            text-align: left;
+            border-bottom: 1px solid #ddd;
+        }
+
+        .suppliers-table th {
+            background-color: #b00000;
+            color: white;
+        }
+
+        .suppliers-table tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        .action-button {
+            padding: 6px 12px;
+            margin: 0 4px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        .edit {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .delete {
+            background-color: #f44336;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+    <div class="suppliers-container">
+        <h1>Supplier Records</h1>
+        <button class="add-button">Add Supplier</button>
+        <table class="suppliers-table">
+            <thead>
+                <tr>
+                    <th>Supplier ID</th>
+                    <th>Name</th>
+                    <th>Address</th>
+                    <th>City</th>
+                    <th>Province</th>
+                    <th>Postal Code</th>
+                    <th>Phone</th>
+                    <th>Contact</th>
+                    <th>Actions</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>10000</td>
+                    <td>Reebok</td>
+                    <td>65 Bluebird Dr</td>
+                    <td>Charlotte</td>
+                    <td>PE</td>
+                    <td>A2V1L6</td>
+                    <td>541-236-5874</td>
+                    <td>Jesse Custer</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11000</td>
+                    <td>Spalding</td>
+                    <td>88 Quality St</td>
+                    <td>St George</td>
+                    <td>NB</td>
+                    <td>E5C3N2</td>
+                    <td>256-558-96</td>
+                    <td>Tulip Ohare</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>11111</td>
+                    <td>Burton</td>
+                    <td>20 Troque St</td>
+                    <td>Montreal</td>
+                    <td>QC</td>
+                    <td>H3B5L1</td>
+                    <td>514-987-2222</td>
+                    <td>John Smith</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <!-- Continue with remaining suppliers -->
+                <tr>
+                    <td>22222</td>
+                    <td>TaylorMade</td>
+                    <td>1841 Argyle St</td>
+                    <td>Halifax</td>
+                    <td>NS</td>
+                    <td>B3J3AS</td>
+                    <td>656-158-7896</td>
+                    <td>Smithers Johnson</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>33333</td>
+                    <td>New Balance</td>
+                    <td>44 Acacia Ave</td>
+                    <td>Toronto</td>
+                    <td>ON</td>
+                    <td>M5H2N2</td>
+                    <td>454-789-2645</td>
+                    <td>Cat Deely</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>44444</td>
+                    <td>Nike</td>
+                    <td>1701 Knotta Ave</td>
+                    <td>London</td>
+                    <td>ON</td>
+                    <td>N6A4L9</td>
+                    <td>235-896-4785</td>
+                    <td>Garth Ennis</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>55555</td>
+                    <td>Northface</td>
+                    <td>87 Blue st</td>
+                    <td>Saint John</td>
+                    <td>NB</td>
+                    <td>E2L1P1</td>
+                    <td>254-896-3287</td>
+                    <td>Warren Ellis</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>66666</td>
+                    <td>CCM</td>
+                    <td>9001 Power Lane</td>
+                    <td>Edmonton</td>
+                    <td>AB</td>
+                    <td>T5K2R7</td>
+                    <td>874-587-5896</td>
+                    <td>Wayne Gretzsky</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>77777</td>
+                    <td>Bauer</td>
+                    <td>909 Poplar Cove</td>
+                    <td>Fredericton</td>
+                    <td>NB</td>
+                    <td>E8T6P0</td>
+                    <td>357-951-1478</td>
+                    <td>Alan Shearer</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>88888</td>
+                    <td>Coleman</td>
+                    <td>454 George St</td>
+                    <td>Bordon</td>
+                    <td>NB</td>
+                    <td>E7L4PN</td>
+                    <td>963-214-7896</td>
+                    <td>Frank Drebbin</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>99999</td>
+                    <td>UnderArmor</td>
+                    <td>189 Frank st</td>
+                    <td>Sussex</td>
+                    <td>NB</td>
+                    <td>E3R5Q0</td>
+                    <td>321-741-8965</td>
+                    <td>Joseph Dredd</td>
+                    <td>
+                        <button class="action-button edit">Edit</button>
+                        <button class="action-button delete">Delete</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</body>
+</html>

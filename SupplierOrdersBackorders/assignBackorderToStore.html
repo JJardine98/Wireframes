@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Assign Backorder to Store Order</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="assign-backorder">
+    <h1>Assign Backorder to Store Order</h1>
+
+    <!-- Backorders Table -->
+    <h2>Available Backorders</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Backorder ID</th>
+          <th>Item Name</th>
+          <th>Quantity Available</th>
+          <th>Assign to Store Order</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>001</td>
+          <td>Item C</td>
+          <td>5</td>
+          <td>
+            <select>
+              <option>Select Store Order</option>
+              <option>Store Order 101</option>
+              <option>Store Order 102</option>
+              <!-- More store orders -->
+            </select>
+            <input type="number" placeholder="Quantity">
+          </td>
+        </tr>
+        <!-- Additional rows as needed -->
+      </tbody>
+    </table>
+
+    <!-- Action Buttons -->
+    <button>Assign to Order</button>
+    <button>Clear Assignment</button>
+  </div>
+</body>
+</html>

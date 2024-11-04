@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Permissions - Bullseye Sporting Goods</title>
+    <link rel="stylesheet" href="PermissionDashboard.css">
+</head>
+<body>
+
+    <!-- Main Container -->
+    <div class="permissions-container">
+        <h1>Employee Permissions Management</h1>
+
+        <!-- System Permissions Section -->
+        <section class="permissions-section">
+            <h2>Permissions</h2>
+            <table class="permissions-table">
+                <thead>
+                    <tr>
+                        <th>Permission ID</th>
+                        <th>Permission Role</th>
+                        <th>Actions</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>1</td>
+                        <td>Admin</td>
+                        <td>
+                            <button class="action-button edit">Edit</button>
+                            <button class="action-button delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>2</td>
+                        <td>Management</td>
+                        <td>
+                            <button class="action-button edit">Edit</button>
+                            <button class="action-button delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>3</td>
+                        <td>Warehouse Manager</td>
+                        <td>
+                            <button class="action-button edit">Edit</button>
+                            <button class="action-button delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>4</td>
+                        <td>Store Manager</td>
+                        <td>
+                            <button class="action-button edit">Edit</button>
+                            <button class="action-button delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>5</td>
+                        <td>Warehouse Worker</td>
+                        <td>
+                            <button class="action-button edit">Edit</button>
+                            <button class="action-button delete">Delete</button>
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>6</td>
+                        <td>Store Worker</td>
+                        <td>
+                            <button class="action-button edit">Edit</button>
+                            <button class="action-button delete">Delete</button>
+                        </td>
+                    </tr>
+                    <!-- Additional permissions go here -->
+                </tbody>
+            </table>
+            <button class="add-button">Add New Permission Level</button>
+            <button class="add-button">Assign Permission Roles</button>
+            <button class="add-button">Assign Permission Level to Employee</button>
+        </section>
+
+        <!-- Employee Permissions Section -->
+        <section class="permissions-section">
+            <h2>Employee Permissions</h2>
+            <form class="employee-permissions-form">
+                <label for="employee-select">Select Role:</label>
+                <select id="employee-select" name="employee-select">
+                    <option value="employee1">Admin</option>
+                    <option value="employee2">Management</option>
+                    <option value="employee3">Warehouse Manager</option>
+                    <option value="employee4">Store Manager</option>
+                    <option value="employee5">Warehouse Worker</option>
+                    <option value="employee6">Store Worker</option>
+                    <!-- Additional employees here -->
+                </select>
+
+                <label for="permission-select">Assigned Permissions:</label>
+                <select id="permission-select" name="permission-select" multiple>
+                    <option value="view-inventory">View Inventory</option>
+                    <option value="edit-products">Edit Inventory</option>
+                    <option value="edit-products">View Reports</option>
+                    <option value="edit-products">Edit Reports</option>
+                    <option value="edit-products">Create Store Order</option>
+                    <option value="edit-products">Create Emergency Order</option>
+                    <option value="edit-products">Receive Store Order</option>
+                    <option value="edit-products">Process Orders</option>
+                    <option value="edit-products">Move Inventory</option>
+                    <option value="edit-products">Create Supplier Order</option>
+                    <option value="edit-products">Create Backorder</option>
+                    <option value="edit-products">Edit Permissions</option>
+                    <option value="edit-products">Create Permissions</option>
+                    <option value="edit-products">Edit Role</option>
+                    <option value="edit-products">Create Role</option>
+                    <option value="edit-products">Assign Role</option>
+
+
+                    <!-- Additional permissions here -->
+                </select>
+                
+                
+            </form>
+        </section>
+
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="form.css">
+    <title>Add Employee</title>
+</head>
+<body>
+    <div class="employee-form-container">
+        <h1>Add Employee</h1>
+        <form>
+            <label for="employee-id">Employee ID:</label>
+            <input type="text" id="employee-id" required>
+
+            <label for="username">Username:</label>
+            <input type="text" id="username" required>
+
+            <label for="first-name">First Name:</label>
+            <input type="text" id="first-name" required>
+
+            <label for="last-name">Last Name:</label>
+            <input type="text" id="last-name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" required>
+
+            <label for="permission-level">Permission Level:</label>
+            <select id="permission-level" required>
+                <option value="" disabled selected>Select Permission Level</option>
+                <option value="Regional Manager">Regional Manager</option>
+                <option value="Financial Manager">Financial Manager</option>
+                <option value="Store Manager">Store Manager</option>
+                <option value="Warehouse Manager">Warehouse Manager</option>
+                <option value="Trucking / Delivery">Trucking / Delivery</option>
+                <option value="Warehouse Employee">Warehouse Employee</option>
+                <option value="Administrator">Administrator</option>
+            </select>
+
+            <label for="location">Location:</label>
+<select id="location" required>
+    <option value="" disabled selected>Select a location</option>
+    <option value="Bullseye Corporate Headquarters">Bullseye Corporate Headquarters</option>
+    <option value="Saint John Retail">Saint John Retail</option>
+    <option value="Sussex Retail">Sussex Retail</option>
+    <option value="Moncton Retail">Moncton Retail</option>
+    <option value="Dieppe Retail">Dieppe Retail</option>
+    <option value="Oromocto Retail">Oromocto Retail</option>
+    <option value="Fredericton Retail">Fredericton Retail</option>
+    <option value="Miramichi Retail">Miramichi Retail</option>
+    <option value="Warehouse">Warehouse</option>
+    <option value="Trucking / Delivery Truck">Trucking / Delivery Truck</option>
+</select>
+
+            <button type="submit" class="assign-button">Add Employee</button>
+        </form>
+        <button class="secondary-button">Cancel</button>
+    </div>
+</body>
+</html>

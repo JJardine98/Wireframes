@@ -1,0 +1,145 @@
+/* Shared Styles for Inventory Management Pages - Red/White Theme */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+  }
+  
+  body {
+    background-color: #f9f9f9;
+    color: #333333;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+  }
+  
+  h1 {
+    font-size: 28px;
+    margin-bottom: 20px;
+    color: #b00000;
+    text-align: center;
+  }
+  
+  label {
+    display: block;
+    font-weight: bold;
+    margin-top: 15px;
+    color: #333333;
+  }
+  
+  input[type="text"],
+  input[type="number"],
+  input[type="date"],
+  textarea,
+  select {
+    width: 90%;
+    padding: 12px;
+    margin: 10px 0 20px;
+    border: 1px solid #b00000;
+    border-radius: 5px;
+    background-color: #ffffff;
+    color: #333333;
+  }
+  
+  /* Container Styles for Form Sections */
+  .permission-container,
+  .assign-permissions-container,
+  .create-supplier-order,
+  .receive-supplier-order,
+  .view-backorders,
+  .add-backorder,
+  .assign-backorder {
+    width: 800px;
+    max-width: 800px;
+    background-color: #ffffff;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+    margin: 20px;
+  }
+  
+  /* Table Styles */
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+  }
+  
+  table, th, td {
+    border: 1px solid #ddd;
+  }
+  
+  th, td {
+    padding: 12px;
+    text-align: left;
+  }
+  
+  th {
+    background-color: #b00000;
+    color: #ffffff;
+    font-weight: bold;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #f9f9f9;
+  }
+  
+  /* Button Styles */
+  button,
+  .form-button {
+    width: 100%;
+    padding: 12px;
+    margin: 10px 0;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+    color: #ffffff;
+    background-color: #b00000;
+    transition: background-color 0.3s ease;
+  }
+  
+  button:hover,
+  .form-button:hover {
+    background-color: #900000;
+  }
+  
+  button.cancel,
+  button[type="reset"] {
+    background-color: #e74c3c;
+  }
+  
+  button.cancel:hover,
+  button[type="reset"]:hover {
+    background-color: #c0392b;
+  }
+  
+  /* Additional styling for permissions checkboxes */
+  .permissions-checkboxes label {
+    font-weight: normal;
+    margin: 5px 0;
+    color: #333333;
+  }
+  
+  input[type="checkbox"] {
+    margin-right: 10px;
+  }
+  
+  /* Responsive Design */
+  @media (max-width: 768px) {
+    h1 {
+      font-size: 24px;
+    }
+  
+    button,
+    .form-button {
+      padding: 10px;
+    }
+  
+    th, td {
+      font-size: 0.9em;
+    }
+  }
+  

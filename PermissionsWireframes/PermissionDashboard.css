@@ -1,0 +1,129 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f9f9f9; /* Light gray background for contrast */
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+    color: #333333; /* Dark gray text for readability */
+}
+
+.permissions-container {
+    width: 800px;
+    background-color: #ffffff; /* White background for container */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    color: #333333; /* Dark gray text for container */
+}
+
+h1 {
+    text-align: center;
+    margin-bottom: 20px;
+    color: #b00000; /* Dark red for main header */
+}
+
+.permissions-section {
+    margin-bottom: 30px;
+}
+
+h2 {
+    margin-bottom: 15px;
+    font-size: 20px;
+    color: #b00000; /* Dark red for subheaders */
+}
+
+.permissions-table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-bottom: 15px;
+}
+
+.permissions-table th,
+.permissions-table td {
+    padding: 10px;
+    border: 1px solid #ddd; /* Light border for table */
+    text-align: left;
+}
+
+.permissions-table th {
+    background-color: #b00000; /* Dark red header background */
+    color: #ffffff; /* White text for header */
+    font-weight: bold;
+}
+
+.action-button,
+.add-button,
+.assign-button {
+    padding: 8px 12px;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease; /* Smooth transition for hover effects */
+}
+
+.add-button {
+    background-color: #b00000; /* Dark red button */
+    color: white;
+    border: none;
+}
+
+.add-button:hover {
+    background-color: #900000; /* Slightly darker red on hover */
+}
+
+.action-button.edit {
+    background-color: #ffcc00; /* Yellow for edit button */
+    color: #333;
+    border: none;
+}
+
+.action-button.delete {
+    background-color: #ff4d4d; /* Red for delete button */
+    color: white;
+    border: none;
+}
+
+.action-button:hover {
+    opacity: 0.8;
+}
+
+.employee-permissions-form {
+    display: flex;
+    flex-direction: column;
+}
+
+.employee-permissions-form label {
+    margin-top: 10px;
+    margin-bottom: 5px;
+    font-weight: bold;
+    color: #333333; /* Dark gray text for labels */
+}
+
+#employee-select,
+#permission-select,
+input[type="text"],
+input[type="password"],
+select {
+    padding: 10px; /* Slightly increased padding */
+    border: 1px solid #ddd; /* Light border */
+    border-radius: 4px;
+    background-color: #ffffff; /* White background for inputs */
+    color: #333333; /* Dark gray text for inputs */
+    margin-bottom: 10px;
+}
+
+.assign-button {
+    background-color: #b00000; /* Dark red for assign button */
+    color: white;
+    border: none;
+    padding: 10px;
+}
+
+.assign-button:hover {
+    background-color: #900000; /* Darker red on hover */
+}
