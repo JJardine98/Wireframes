@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Create Supplier Order</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <div class="navbar">
+    <a href="orderManagementPanel.html">Dashboard</a>
+    <a href="createSupplierOrder.html">Create Supplier Order</a>
+    <a href="viewBackorders.html">View Backorders</a>
+    <a href="store_orders.html">Manage Store Orders</a>
+  </div>
+
+  <div class="content">
+    <h1>Create Supplier Order</h1>
+    <form>
+      <label for="supplier">Supplier:</label>
+      <select id="supplier">
+        <option>Supplier 1</option>
+        <option>Supplier 2</option>
+      </select>
+
+      <label for="item">Item ID:</label>
+      <input type="text" id="item" placeholder="Item ID">
+
+      <label for="name">Item Name:</label>
+      <input type="text" id="name" placeholder="Item Name">
+
+      <label for="quantity">Quantity:</label>
+      <input type="number" id="quantity" placeholder="Quantity">
+
+      <label for="delivery-date">Expected Delivery Date:</label>
+      <input type="date" id="delivery-date">
+      
+      <button class="btn">Place Order</button>
+    </form>
+  </div>
+
+</body>
+</html>

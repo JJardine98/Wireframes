@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Store Orders Management</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+
+  <!-- Navigation Bar -->
+  <div class="navbar">
+    <a href="orderManagementPanel.html">Dashboard</a>
+    <a href="createSupplierOrder.html">Create Supplier Order</a>
+    <a href="viewBackorders.html">View Backorders</a>
+    <a href="store_orders.html">Manage Store Orders</a>
+  </div>
+
+  <!-- Store Orders Section -->
+  <div class="content">
+    <h1>Manage Store Orders</h1>
+
+    <!-- Create Store Order Form -->
+    <section class="store-order-section">
+      <h2>Create Store Order</h2>
+      <form>
+        <label for="store-order-item">Item ID:</label>
+        <input type="text" id="store-order-item" placeholder="Item ID">
+        
+        <label for="store-order-quantity">Quantity:</label>
+        <input type="number" id="store-order-quantity" placeholder="Quantity">
+        
+        <label for="reorder-level">Reorder Level:</label>
+        <input type="number" id="reorder-level" placeholder="Reorder Level">
+        
+        <button class="btn">Place Store Order</button>
+      </form>
+    </section>
+
+    <!-- Create Emergency Order Form -->
+    <section class="store-order-section">
+      <h2>Create Emergency Order</h2>
+      <form>
+        <label for="emergency-item">Item ID:</label>
+        <input type="text" id="emergency-item" placeholder="Item ID">
+        
+        <label for="emergency-quantity">Quantity:</label>
+        <input type="number" id="emergency-quantity" placeholder="Quantity (Limited)">
+        
+        <button class="btn">Place Emergency Order</button>
+      </form>
+    </section>
+
+    <!-- Receive Store Order Table -->
+    <section class="store-order-section">
+      <h2>Receive Store Orders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>12345</td>
+            <td>Item A</td>
+            <td>100</td>
+            <td>Pending</td>
+            <td><button class="btn">Receive</button></td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </section>
+
+    <!-- Process Store Orders Section -->
+    <section class="store-order-section">
+      <h2>Process Store Orders</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>Order ID</th>
+            <th>Item Name</th>
+            <th>Quantity</th>
+            <th>Notes</th>
+            <th>Backorder Status</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>54321</td>
+            <td>Item B</td>
+            <td>50</td>
+            <td><input type="text" placeholder="Add notes..."></td>
+            <td>Assigned</td>
+            <td><button class="btn">Process</button></td>
+          </tr>
+          <!-- Add more rows as needed -->
+        </tbody>
+      </table>
+    </section>
+  </div>
+
+</body>
+</html>
