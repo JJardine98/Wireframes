@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="styles.css">
+    <title>Perform Inventory</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: Arial, sans-serif;
+        }
+            
+
+            /* Add your custom styles here */
+            .product-grid {
+                display: flex;
+                gap: 20px;
+                width: 100%;
+                max-width: 2000px;
+                justify-content: center;
+                flex-wrap: wrap;
+            }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <p>User: jperez</p>
+        <p>Access Level: Store Manager</p>
+        <select id="location" required>
+            <option value="" disabled selected>Select a location</option>
+            <option value="Saint John Retail">Saint John Retail</option>
+            <option value="Sussex Retail">Sussex Retail</option>
+            <option value="Moncton Retail">Moncton Retail</option>
+            <option value="Dieppe Retail">Dieppe Retail</option>
+            <option value="Oromocto Retail">Oromocto Retail</option>
+            <option value="Fredericton Retail">Fredericton Retail</option>
+            <option value="Miramichi Retail">Miramichi Retail</option>
+            <option value="Warehouse">Warehouse</option>
+        
+        </select>
+    </header>
+
+    <h1>Inventory Manager</h1>
+
+    <div class="search-container">
+        <input type="text" class="search-input" placeholder="Scan Barcode, Search by Description or Enter SKU/Item ID">
+    </div>
+
+    <a href="InventoryItemForm.html" class="button">Add/Edit Item (Admin / Managers)</a>
+    <a href="IndividualItem.html" class="button">Perform Inventory</a>
+    <a href="../Dashboard/dashboard.html" class="button">Dashboard</a>
+
+    
+    <div class="product-card">
+        <div class="product-id">10013</div>
+        <div class="product-title">Vapor 1X Lite Griptac Senior Hockey Stick</div>
+        <div class="product-details">
+            <span>SKU#: 60013</span>
+        </div>
+        <img src="../Images/1xlite.webp" class="product-image" alt="Paint">
+        <div class="location-tag">Weight: 3.00 LBS</div>
+        <div class="location-tag">Category: Sports Equipment</div>
+        <div class="stock-info">
+            In Stock: <select id="quantitySelect"></select>
+          </div>
+        <div class="stock-info">Case Size: 20</div>
+        <div class="price">$339.99</div>
+        <div class="action-buttons">
+            
+            <button class="button">Delete</button>
+        </div>
+    </div>
+
+        
+    </div>
+</body>
+
+<script>
+    // Get the select element
+    const select = document.getElementById('quantitySelect');
+  
+    // Define the range of numbers you want to include
+    const maxQuantity = 100; // Adjust this as needed
+  
+    // Populate the select element with options
+    for (let i = 1; i <= maxQuantity; i++) {
+      const option = document.createElement('option');
+      option.value = i;
+      option.textContent = i;
+      select.appendChild(option);
+    }
+  </script>
+
+</html>
