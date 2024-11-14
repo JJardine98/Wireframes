@@ -37,7 +37,7 @@ body {
 
 h1 {
     font-size: 28px;
-    color: #b00000; /* Professional dark red for heading */
+    color: #b22222; /* Professional dark red for heading */
 }
 
 label {
@@ -54,7 +54,7 @@ select {
     width: 100%;
     padding: 12px;
     margin-bottom: 20px;
-    border: 1px solid #b00000; /* Red border for inputs */
+    border: 1px solid #b22222; /* Red border for inputs */
     border-radius: 5px;
     background-color: #ffffff;
     color: #333333; /* Dark gray for input text */

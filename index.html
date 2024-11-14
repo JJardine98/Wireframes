@@ -5,10 +5,128 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bullseye Sporting Goods - Login</title>
     <link rel="stylesheet" href="login.css">
+    <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9; /* Lighter background for contrast */
+        }
+
+        .login-container {
+            width: 100%;
+            max-width: 600px; /* Set max-width for responsiveness */
+            padding: 40px;
+            background-color: #ffffff;
+            border-radius: 10px;
+            box-shadow: 0 6px 20px rgba(0, 0, 0, 0.1);
+            text-align: center;
+        }
+
+        .login-header {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 30px;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            margin-right: 15px;
+        }
+
+        h1 {
+            font-size: 28px;
+            color: #b22222; /* Professional dark red for heading */
+        }
+
+        label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: 600;
+            color: #333;
+            font-size: 16px;
+        }
+
+        input[type="text"],
+        input[type="password"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 20px;
+            border: 2px solid #b22222; /* Red border for inputs */
+            border-radius: 5px;
+            background-color: #f9f9f9;
+            color: #333;
+            font-size: 16px;
+            transition: border-color 0.3s ease;
+        }
+
+        input[type="text"]:focus,
+        input[type="password"]:focus {
+            border-color: #900000; /* Darker red on focus */
+            outline: none;
+            box-shadow: 0 0 8px rgba(176, 0, 0, 0.4);
+        }
+
+        .button {
+            width: 100%;
+            padding: 12px;
+            background-color: #b00000;
+            color: #fff;
+            border: none;
+            font-weight: bold;
+            font-size: 18px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+            text-decoration: none; /* Remove link underline */
+            display: inline-block;
+        }
+
+        .button:hover {
+            background-color: #900000;
+        }
+
+        .forgot-password {
+            display: block;
+            margin-top: 10px;
+            font-size: 14px;
+            color: #b22222;
+            text-decoration: none;
+        }
+
+        .forgot-password:hover {
+            text-decoration: underline;
+        }
+
+        .login-footer {
+            margin-top: 30px;
+            font-size: 14px;
+            color: #777;
+        }
+
+        .login-footer a {
+            color: #b22222;
+            text-decoration: none;
+        }
+
+        .login-footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
 </head>
 <body>
 
-    <!-- Main Container for Login Page -->
     <div class="login-container">
 
         <!-- Header Section with Logo and Name -->
@@ -25,8 +143,16 @@
             <label for="password">Password</label>
             <input type="password" id="password" name="password" required placeholder="Enter your password">
 
-            <a href="Dashboard/dashboard.html" class="button">Login (Go to Dashboard)</a>
+            <a href="Dashboard/dashboard.html" class="button">Login</a>
+
+            <!-- Forgot Password Link -->
+            <a href="#" class="forgot-password">Forgot Password?</a>
         </form>
+
+        <!-- Footer with signup link -->
+        <div class="login-footer">
+            <p>New user? <a href="#">Sign up here</a></p>
+        </div>
 
     </div>
 
