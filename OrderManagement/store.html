@@ -187,8 +187,9 @@
         <nav class="nav-menu">
             <a href="orderManagementPanel.html" class="nav-item">Dashboard</a>
             <a href="createSupplierOrder.html" class="nav-item">Create Supplier Order</a>
-            <a href="createStoreOrder.html" class="nav-item">Create Store Order</a>
+            <a href="store.html" class="nav-item">Create Store Order</a>
             <a href="viewBackorders.html" class="nav-item">View Backorders</a>
+            <a href="store_orders.html" class="nav-item">Store Orders</a>
             <a href="fulfillment.html" class="nav-item">Order Fulfillment</a>
         </nav>
     </div>
@@ -201,9 +202,13 @@
                     <label for="store">Store</label>
                     <select id="store" class="form-control">
                         <option value="">Select Store</option>
-                        <option value="1">Store A - Downtown</option>
-                        <option value="2">Store B - Uptown</option>
-                        <option value="3">Store C - Midtown</option>
+                        <option value="Saint John Retail">Saint John Retail</option>
+                        <option value="Sussex Retail">Sussex Retail</option>
+                        <option value="Moncton Retail">Moncton Retail</option>
+                        <option value="Dieppe Retail">Dieppe Retail</option>
+                        <option value="Oromocto Retail">Oromocto Retail</option>
+                        <option value="Fredericton Retail">Fredericton Retail</option>
+                        <option value="Miramichi Retail">Miramichi Retail</option>
                     </select>
                 </div>
 
@@ -216,13 +221,12 @@
                     <label>Order Items</label>
                     <div class="item-list">
                         <div class="item-row">
-                            <select class="form-control">
+                            <select class="form-control item-select">
                                 <option value="">Select Item</option>
-                                <option value="1">Item A - #12345</option>
-                                <option value="2">Item B - #12346</option>
+                                
                             </select>
-                            <input type="number" class="form-control" placeholder="Quantity">
-                            <input type="text" class="form-control" placeholder="Unit Price" readonly>
+                            <input type="number" class="form-control quantity-input" placeholder="Quantity">
+                            <input type="text" class="form-control unit-price-input" placeholder="Unit Price" readonly>
                             <button class="remove-item-btn">×</button>
                         </div>
                     </div>
@@ -239,19 +243,19 @@
                 <h3>Order Summary</h3>
                 <div class="summary-item">
                     <span>Total Items:</span>
-                    <span>1</span>
+                    <span id="total-items">0</span>
                 </div>
                 <div class="summary-item">
                     <span>Subtotal:</span>
-                    <span>$0.00</span>
+                    <span id="subtotal">$0.00</span>
                 </div>
                 <div class="summary-item">
-                    <span>Tax (10%):</span>
-                    <span>$0.00</span>
+                    <span>Tax (15%):</span>
+                    <span id="tax">$0.00</span>
                 </div>
                 <div class="summary-item">
                     <span><strong>Total:</strong></span>
-                    <span><strong>$0.00</strong></span>
+                    <span><strong id="total">$0.00</strong></span>
                 </div>
 
                 <div class="form-group">
@@ -266,5 +270,148 @@
             </div>
         </div>
     </div>
+
+    <script>
+        // Sample data
+        
+
+        
+    
+      
+        document.addEventListener("DOMContentLoaded", function () {
+    // Sample inventory data
+    const inventoryItems = {
+            "10013": { name: "Vapor 1X Lite Griptac Senior Hockey Stick", price: 339.99 },
+            "10025": { name: "Re-Akt 200 Hockey Helmet Combo", price: 399.99 },
+            "10042": { name: "Nexus 2N Senior Hockey Gloves", price: 299.99 },
+            "10233": { name: "Men's Burton Moto Snowboard Boot", price: 249.99 },
+            "10151": { name: "Medium Cutlass", price: 350.00 },
+            "10050": { name: "Tacks 7092 Senior Hockey Gloves", price: 149.99 },
+            "10051": { name: "Tacks 4 Roll Pro Senior Hockey Gloves", price: 146.99 },
+            "10053": { name: "Tacks 5092 Senior Hockey Gloves", price: 119.99 },
+            "10056": { name: "Jetspeed FT1 Senior Hockey Pants", price: 219.99 },
+            "10057": { name: "Super Tacks Senior Hockey Pants", price: 219.99 },
+            "10060": { name: "Jetspeed FT390 Senior Hockey Pants", price: 169.99 },
+            "10061": { name: "Tacks 7092 Senior Hockey Pants", price: 169.99 },
+            "10052": { name: "Vapor APX2 Senior Hockey Gloves", price: 124.99 },
+            "10054": { name: "Vapor X800 Lite Senior Hockey Gloves", price: 119.99 },
+            "10055": { name: "Nexus 1N Senior Ice Hockey Pants", price: 229.99 },
+            "10058": { name: "Nexus 2N Senior Ice Hockey Pants", price: 229.99 },
+            "10059": { name: "Vapor APX2 Senior Hockey Pants", price: 199.99 },
+            "10127": { name: "Coleman 10 person tent", price: 100.00 },
+            "10129": { name: "Coleman 5\" knife", price: 20.00 },
+            "10131": { name: "Coleman 6\" knife", price: 30.00 },
+            "10133": { name: "Coleman 7\" knife", price: 40.00 },
+            "10135": { name: "Coleman 8\" knife", price: 50.00 },
+            "10137": { name: "Coleman 9\" knife", price: 60.00 },
+            "10139": { name: "Coleman machete", price: 100.00 },
+            "10128": { name: "Northface 10 person tent", price: 130.00 },
+            "10130": { name: "Northface 5\" knife", price: 30.00 },
+            "10132": { name: "Northface 6\" knife", price: 40.00 },
+            "10134": { name: "Northface 7\" knife", price: 50.00 },
+            "10136": { name: "Northface 8\" knife", price: 60.00 },
+            "10138": { name: "Northface 9\" knife", price: 70.00 },
+            "10140": { name: "Northface machete", price: 120.00 }
+        };
+
+
+    const itemList = document.querySelector(".item-list");
+    const addItemBtn = document.querySelector(".add-item-btn");
+    const totalItems = document.getElementById("total-items");
+    const subtotalDisplay = document.getElementById("subtotal");
+    const taxDisplay = document.getElementById("tax");
+    const totalDisplay = document.getElementById("total");
+
+    // Add event listener to the Add Item button
+    addItemBtn.addEventListener("click", function () {
+        const itemRow = document.createElement("div");
+        itemRow.classList.add("item-row");
+
+        // Create item row HTML
+        itemRow.innerHTML = `
+            <select class="form-control item-select">
+                <option value="">Select Item</option>
+                <!-- Options will be dynamically added here -->
+            </select>
+            <input type="number" class="form-control quantity-input" placeholder="Quantity">
+            <input type="text" class="form-control unit-price-input" placeholder="Unit Price" readonly>
+            <button class="remove-item-btn">×</button>
+        `;
+
+        itemList.appendChild(itemRow);
+
+        const itemSelect = itemRow.querySelector(".item-select");
+        const quantityInput = itemRow.querySelector(".quantity-input");
+        const unitPriceInput = itemRow.querySelector(".unit-price-input");
+        const removeBtn = itemRow.querySelector(".remove-item-btn");
+
+        // Populate item select options
+        updateItemOptions(itemSelect);
+
+        // Event listener for item selection
+        itemSelect.addEventListener("change", function () {
+            const itemId = itemSelect.value;
+            if (itemId) {
+                const item = inventoryItems[itemId];
+                unitPriceInput.value = item.price.toFixed(2);
+                updateSummary();  // Update the summary when the item is selected
+            } else {
+                unitPriceInput.value = "";
+            }
+        });
+
+        // Event listener for quantity input
+        quantityInput.addEventListener("input", updateSummary);
+
+        // Event listener for removing the item row
+        removeBtn.addEventListener("click", function () {
+            itemRow.remove();
+            updateSummary();  // Update the summary when an item is removed
+        });
+
+        // Update the summary after adding an item
+        updateSummary();
+    });
+
+    // Function to populate item options
+    function updateItemOptions(itemSelect) {
+        // Clear any existing options
+        itemSelect.innerHTML = `<option value="">Select Item</option>`;
+
+        // Add options dynamically based on inventoryItems
+        for (const [id, item] of Object.entries(inventoryItems)) {
+            const option = document.createElement('option');
+            option.value = id;
+            option.textContent = `${item.name} - #${id}`;
+            itemSelect.appendChild(option);
+        }
+    }
+
+    // Function to update the summary (total items, subtotal, tax, total)
+    function updateSummary() {
+        let totalQuantity = 0;
+        let subtotal = 0;
+
+        // Loop through each item row and calculate the total quantity and subtotal
+        const itemRows = document.querySelectorAll(".item-row");
+        itemRows.forEach(row => {
+            const quantity = parseInt(row.querySelector(".quantity-input").value) || 0;
+            const unitPrice = parseFloat(row.querySelector(".unit-price-input").value) || 0;
+            totalQuantity += quantity;
+            subtotal += quantity * unitPrice;
+        });
+
+        const tax = subtotal * 0.15;  // Assuming 15% tax
+        const total = subtotal + tax;
+
+        // Update the displayed summary
+        totalItems.textContent = totalQuantity;
+        subtotalDisplay.textContent = `$${subtotal.toFixed(2)}`;
+        taxDisplay.textContent = `$${tax.toFixed(2)}`;
+        totalDisplay.textContent = `$${total.toFixed(2)}`;
+    }
+});
+
+    </script>
 </body>
 </html>

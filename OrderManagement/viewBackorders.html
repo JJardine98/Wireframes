@@ -263,10 +263,10 @@
         <nav class="nav-menu">
             <a href="orderManagementPanel.html" class="nav-item">Dashboard</a>
             <a href="createSupplierOrder.html" class="nav-item">Create Supplier Order</a>
+            <a href="store.html" class="nav-item">Create Store Order</a>
             <a href="viewBackorders.html" class="nav-item">View Backorders</a>
             <a href="store_orders.html" class="nav-item">Store Orders</a>
             <a href="fulfillment.html" class="nav-item">Order Fulfillment</a>
-            
         </nav>
     </div>
 
@@ -283,24 +283,24 @@
         <div class="stats-grid">
             <div class="stat-card">
                 <h3>Total Backorders</h3>
-                <div class="value">47</div>
-                <div class="trend up">↑ 12% from last week</div>
+                <div class="value">15</div>
+                <div class="trend down">↓ 15% from last week</div>
             </div>
             <div class="stat-card">
                 <h3>High Priority</h3>
-                <div class="value">15</div>
-                <div class="trend down">↓ 5% from last week</div>
+                <div class="value">5</div>
+                <div class="trend down">↓ 20% from last week</div>
             </div>
             <div class="stat-card">
                 <h3>Average Resolution Time</h3>
-                <div class="value">3.2 days</div>
-                <div class="trend up">↑ 0.5 days from last week</div>
+                <div class="value">4 days</div>
+                <div class="trend up">↑ 1 days from last week</div>
             </div>
             <div class="stat-card">
                 <h3>Resolution Rate</h3>
-                <div class="value">78%</div>
+                <div class="value">99.7%</div>
                 <div class="progress-bar">
-                    <div class="progress-fill" style="width: 78%"></div>
+                    <div class="progress-fill" style="width: 99.7%"></div>
                 </div>
             </div>
         </div>
@@ -343,10 +343,9 @@
                     <thead>
                         <tr>
                             <th>Backorder ID</th>
-                            <th>Original Order</th>
                             <th>Item</th>
                             <th>Quantity</th>
-                            <th>Customer</th>
+                            <th>Receiving Store</th>
                             <th>Age</th>
                             <th>Priority</th>
                             <th>Status</th>
@@ -356,10 +355,192 @@
                     <tbody>
                         <tr>
                             <td>#BO-001</td>
-                            <td>#SO-123</td>
-                            <td>Item A</td>
-                            <td>50</td>
-                            <td>Store #123</td>
+                            
+                            <td>Vapor 1X Lite Griptac Senior Hockey Stick</td>
+                            <td>3</td>
+                            <td>Fredericton - Retail</td>
+                            <td>2 days</td>
+                            <td><span class="priority-badge priority-medium">Medium</span></td>
+                            <td>Resolved</td>
+                            <td>
+                                <button class="action-btn btn-primary">Ship</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-002</td>
+                            
+                            <td>Vapor 1X Lite Griptac Senior Hockey Stick</td>
+                            <td>20</td>
+                            <td>Saint John - Retail</td>
+                            <td>5 days</td>
+                            <td><span class="priority-badge priority-medium">Medium</span></td>
+                            <td>In Progress</td>
+                            <td>
+                                <button class="action-btn btn-primary">Mark Resolved</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-003</td>
+                            
+                            <td>Re-Akt 200 Hockey Helmet Combo</td>
+                            <td>15</td>
+                            <td>Oromocto - Retail</td>
+                            <td>4 days</td>
+                            <td><span class="priority-badge priority-high">High</span></td>
+                            <td>Pending</td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-004</td>
+                            
+                            <td>Supreme Ultrasonic Goalie Pads</td>
+                            <td>10</td>
+                            <td>Sussex - Retail</td>
+                            <td>6 days</td>
+                            <td><span class="priority-badge priority-low">Low</span></td>
+                            <td>Pending</td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-005</td>
+                            
+                            <td>Nexus Geo Senior Hockey Stick</td>
+                            <td>12</td>
+                            <td>Dieppe - Retail</td>
+                            <td>3 days</td>
+                            <td><span class="priority-badge priority-high">High</span></td>
+                            <td>Resolved<i/td>
+                            <td>
+                                <button class="action-btn btn-primary">Ship</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-006</td>
+                            
+                            <td>Hyperlite Junior Skates</td>
+                            <td>18</td>
+                            <td>Miramichi - Retail</td>
+                            <td>7 days</td>
+                            <td><span class="priority-badge priority-medium">Medium</span></td>
+                            <td>Pending</td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-007</td>
+                            
+                            <td>JetSpeed FT4 Shoulder Pads</td>
+                            <td>25</td>
+                            <td>Fredericton - Retail</td>
+                            <td>8 days</td>
+                            <td><span class="priority-badge priority-low">Low</span></td>
+                            <td>In Progress</td>
+                            <td>
+                                <button class="action-btn btn-primary">Mark Resolved</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-008</td>
+                            
+                            <td>Alpha LX Pro Gloves</td>
+                            <td>14</td>
+                            <td>Saint John - Retail</td>
+                            <td>2 days</td>
+                            <td><span class="priority-badge priority-high">High</span></td>
+                            <td>Pending</td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-009</td>
+                            
+                            <td>Bauer Supreme M5 Pro Skates</td>
+                            <td>30</td>
+                            <td>Dieppe - Retail</td>
+                            <td>10 days</td>
+                            <td><span class="priority-badge priority-medium">Medium</span></td>
+                            <td>Resolved</td>
+                            <td>
+                                <button class="action-btn btn-primary">Ship</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-010</td>
+                            
+                            <td>CCM Tacks AS-V Pro Stick</td>
+                            <td>20</td>
+                            <td>Sussex - Retail</td>
+                            <td>9 days</td>
+                            <td><span class="priority-badge priority-medium">Medium</span></td>
+                            <td>Resolved</td>
+                            <td>
+                                <button class="action-btn btn-primary">Ship</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-011</td>
+                            
+                            <td>Ribcor Trigger 7 Pro</td>
+                            <td>11</td>
+                            <td>Moncton - Retail</td>
+                            <td>3 days</td>
+                            <td><span class="priority-badge priority-high">High</span></td>
+                            <td>In Progress</td>
+                            <td>
+                                <button class="action-btn btn-primary">Mark Resolved</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-012</td>
+                            
+                            <td>Vapor Hyperlite Helmet</td>
+                            <td>17</td>
+                            <td>Miramichi - Retail</td>
+                            <td>5 days</td>
+                            <td><span class="priority-badge priority-medium">Medium</span></td>
+                            <td>Pending</td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-013</td>
+                            
+                            <td>JetSpeed FT6 Pro Pants</td>
+                            <td>8</td>
+                            <td>Oromocto - Retail</td>
+                            <td>4 days</td>
+                            <td><span class="priority-badge priority-low">Low</span></td>
+                            <td>In Progress</td>
+                            <td>
+                                <button class="action-btn btn-primary">Mark Resolved</button>
+                                <button class="action-btn btn-secondary">Details</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#BO-014</td>
+                            
+                            <td>True Catalyst 9X Gloves</td>
+                            <td>9</td>
+                            <td>Fredericton - Retail</td>
                             <td>3 days</td>
                             <td><span class="priority-badge priority-high">High</span></td>
                             <td>Pending</td>
@@ -369,30 +550,16 @@
                             </td>
                         </tr>
                         <tr>
-                            <td>#BO-002</td>
-                            <td>#SO-124</td>
-                            <td>Item B</td>
-                            <td>25</td>
-                            <td>Store #456</td>
-                            <td>1 day</td>
+                            <td>#BO-015</td>
+                            
+                            <td>Bauer Prodigy Youth Helmet</td>
+                            <td>22</td>
+                            <td>Saint John - Retail</td>
+                            <td>6 days</td>
                             <td><span class="priority-badge priority-medium">Medium</span></td>
-                            <td>In Progress</td>
+                            <td>Resolved</td>
                             <td>
-                                <button class="action-btn btn-primary">Update</button>
-                                <button class="action-btn btn-secondary">Details</button>
-                            </td>
-                        </tr>
-                        <tr>
-                            <td>#BO-003</td>
-                            <td>#SO-125</td>
-                            <td>Item C</td>
-                            <td>10</td>
-                            <td>Store #789</td>
-                            <td>5 days</td>
-                            <td><span class="priority-badge priority-low">Low</span></td>
-                            <td>Pending</td>
-                            <td>
-                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-primary">Ship</button>
                                 <button class="action-btn btn-secondary">Details</button>
                             </td>
                         </tr>

@@ -58,24 +58,78 @@
             padding: 30px;
         }
 
-        .tabs {
+        .dashboard-header {
             display: flex;
-            gap: 2px;
-            margin-bottom: 20px;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 30px;
         }
 
-        .tab {
-            padding: 12px 24px;
-            background: #ddd;
-            border: none;
-            cursor: pointer;
-            font-weight: 600;
-            border-radius: 4px 4px 0 0;
+        .stats-container {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
         }
 
-        .tab.active {
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(5, 1fr);
+            gap: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .stat-card {
             background: white;
-            color: #b00000;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+            display: flex;
+            flex-direction: column;
+        }
+
+        .stat-card h3 {
+            margin: 0 0 10px 0;
+            color: #666;
+            font-size: 14px;
+            font-weight: 500;
+        }
+
+        .stat-value {
+            font-size: 24px;
+            font-weight: bold;
+            color: #333;
+            margin-bottom: 5px;
+        }
+
+        .stat-change {
+            font-size: 12px;
+            color: #666;
+        }
+
+        .stat-change.decrease {
+            color: #388e3c; /* Green for decreases */
+        }
+
+        .stat-change.increase {
+            color: #d32f2f; /* Red for increases */
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 1200px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media screen and (max-width: 600px) {
+            .stats-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .stats-container {
+                padding: 10px;
+            }
         }
 
         .card {
@@ -160,6 +214,10 @@
             color: #721c24;
         }
 
+        .status-shipped {
+            background-color: #d4edda; /* Green */
+        }
+
         .action-btn {
             padding: 6px 12px;
             border: none;
@@ -221,21 +279,51 @@
         <nav class="nav-menu">
             <a href="orderManagementPanel.html" class="nav-item">Dashboard</a>
             <a href="createSupplierOrder.html" class="nav-item">Create Supplier Order</a>
+            <a href="store.html" class="nav-item">Create Store Order</a>
             <a href="viewBackorders.html" class="nav-item">View Backorders</a>
             <a href="store_orders.html" class="nav-item">Store Orders</a>
             <a href="fulfillment.html" class="nav-item">Order Fulfillment</a>
-            
         </nav>
+    </div>
+    
+    
+    
+
+    <div class="stats-container">
+        
+        <div class="stats-grid">
+            <div class="stat-card">
+                <h3>Total Orders</h3>
+                <div class="stat-value">18</div>
+                <div class="stat-change decrease">↓ 15% from last week</div>
+            </div>
+            <div class="stat-card">
+                <h3>Pending</h3>
+                <div class="stat-value">6</div>
+                <div class="stat-change decrease">↓ 20% from last week</div>
+            </div>
+            <div class="stat-card">
+                <h3>Processing</h3>
+                <div class="stat-value">5</div>
+                <div class="stat-change increase">↑ 5% from last week</div>
+            </div>
+            <div class="stat-card">
+                <h3>Shipped</h3>
+                <div class="stat-value">4</div>
+                <div class="stat-change increase">↑ 3% from last week</div>
+            </div>
+            <div class="stat-card">
+                <h3>Emergency</h3>
+                <div class="stat-value">3</div>
+                <div class="stat-change increase">↑ 6.5% from last week</div>
+            </div>
+        </div>
     </div>
 
     <div class="main-content">
-        <h2>Store Orders Management</h2>
         
-        <div class="tabs">
-            <button class="tab active">All Orders</button>
-            <button class="tab">Create Order</button>
-            <button class="tab">Emergency Orders</button>
-        </div>
+        
+        
 
         <div class="card">
             <div class="search-bar">
@@ -268,6 +356,7 @@
                     <thead>
                         <tr>
                             <th>Order ID</th>
+                            <th>Store</th>
                             <th>Date</th>
                             <th>Items</th>
                             <th>Total</th>
@@ -278,9 +367,10 @@
                     <tbody>
                         <tr>
                             <td>#SO-001</td>
+                            <td>Saint John - Retail</td>
                             <td>2024-11-05</td>
-                            <td>Item A (x10), Item B (x5)</td>
-                            <td>$1,500.00</td>
+                            <td>Vapor 1X Lite Griptac Senior Hockey Stick (x10), Re-Akt 200 Hockey Helmet Combo (x10)</td>
+                            <td>$3,399.90</td> <!-- Total price: $339.99 * 10 + $399.99 * 10 -->
                             <td><span class="status-badge status-pending">Pending</span></td>
                             <td>
                                 <button class="action-btn btn-primary">Process</button>
@@ -289,9 +379,10 @@
                         </tr>
                         <tr>
                             <td>#SO-002</td>
+                            <td>Sussex - Retail</td>
                             <td>2024-11-05</td>
-                            <td>Item C (x20)</td>
-                            <td>$2,000.00</td>
+                            <td>Nexus 2N Senior Hockey Gloves (x4), Medium Cutlass (x6)</td>
+                            <td>$2,799.94</td> <!-- Total price: $299.99 * 4 + $350.00 * 6 -->
                             <td><span class="status-badge status-processing">Processing</span></td>
                             <td>
                                 <button class="action-btn btn-primary">Complete</button>
@@ -300,22 +391,204 @@
                         </tr>
                         <tr>
                             <td>#SO-003</td>
+                            <td>Dieppe - Retail</td>
                             <td>2024-11-05</td>
-                            <td>Item D (x15)</td>
-                            <td>$1,800.00</td>
+                            <td>Men's Burton Moto Snowboard Boot (x10)</td>
+                            <td>$2,499.90</td> <!-- Total price: $249.99 * 10 -->
                             <td><span class="status-badge status-emergency">Emergency</span></td>
                             <td>
                                 <button class="action-btn btn-primary">Process</button>
                                 <button class="action-btn btn-secondary">View</button>
                             </td>
                         </tr>
+                        <tr>
+                            <td>#SO-004</td>
+                            <td>Fredericton - Retail</td>
+                            <td>2024-11-06</td>
+                            <td>Vapor 1X Lite Griptac Senior Hockey Stick (x5), Re-Akt 200 Hockey Helmet Combo (x5)</td>
+                            <td>$3,699.90</td> <!-- Total price: $339.99 * 5 + $399.99 * 5 -->
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-005</td>
+                            <td>Moncton - Retail</td>
+                            <td>2024-11-07</td>
+                            <td>Nexus 2N Senior Hockey Gloves (x6), Medium Cutlass (x4)</td>
+                            <td>$2,899.94</td> <!-- Total price: $299.99 * 6 + $350.00 * 4 -->
+                            <td><span class="status-badge status-processing">Processing</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Complete</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-006</td>
+                            <td>Saint John - Retail</td>
+                            <td>2024-11-08</td>
+                            <td>Men's Burton Moto Snowboard Boot (x5), Vapor 1X Lite Griptac Senior Hockey Stick (x5)</td>
+                            <td>$3,399.90</td> <!-- Total price: $249.99 * 5 + $339.99 * 5 -->
+                            <td><span class="status-badge status-shipped">Shipped</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-007</td>
+                            <td>Dieppe - Retail</td>
+                            <td>2024-11-09</td>
+                            <td>Re-Akt 200 Hockey Helmet Combo (x8), Nexus 2N Senior Hockey Gloves (x2)</td>
+                            <td>$2,399.92</td> <!-- Total price: $399.99 * 8 + $299.99 * 2 -->
+                            <td><span class="status-badge status-emergency">Emergency</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-008</td>
+                            <td>Sussex - Retail</td>
+                            <td>2024-11-10</td>
+                            <td>Medium Cutlass (x3), Men's Burton Moto Snowboard Boot (x7)</td>
+                            <td>$3,299.93</td> <!-- Total price: $350.00 * 3 + $249.99 * 7 -->
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-009</td>
+                            <td>Fredericton - Retail</td>
+                            <td>2024-11-11</td>
+                            <td>Vapor 1X Lite Griptac Senior Hockey Stick (x3), Re-Akt 200 Hockey Helmet Combo (x2)</td>
+                            <td>$2,039.94</td> <!-- Total price: $339.99 * 3 + $399.99 * 2 -->
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-010</td>
+                            <td>Moncton - Retail</td>
+                            <td>2024-11-12</td>
+                            <td>Men's Burton Moto Snowboard Boot (x4), Nexus 2N Senior Hockey Gloves (x6)</td>
+                            <td>$3,399.92</td> <!-- Total price: $249.99 * 4 + $299.99 * 6 -->
+                            <td><span class="status-badge status-processing">Processing</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Complete</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-011</td>
+                            <td>Saint John - Retail</td>
+                            <td>2024-11-13</td>
+                            <td>Re-Akt 200 Hockey Helmet Combo (x5), Medium Cutlass (x5)</td>
+                            <td>$3,749.95</td> <!-- Total price: $399.99 * 5 + $350.00 * 5 -->
+                            <td><span class="status-badge status-shipped">Shipped</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-012</td>
+                            <td>Dieppe - Retail</td>
+                            <td>2024-11-14</td>
+                            <td>Vapor 1X Lite Griptac Senior Hockey Stick (x2), Men's Burton Moto Snowboard Boot (x6)</td>
+                            <td>$3,459.94</td> <!-- Total price: $339.99 * 2 + $249.99 * 6 -->
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-013</td>
+                            <td>Fredericton - Retail</td>
+                            <td>2024-11-15</td>
+                            <td>Medium Cutlass (x2), Nexus 2N Senior Hockey Gloves (x8)</td>
+                            <td>$2,799.94</td> <!-- Total price: $350.00 * 2 + $299.99 * 8 -->
+                            <td><span class="status-badge status-processing">Processing</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Complete</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-014</td>
+                            <td>Sussex - Retail</td>
+                            <td>2024-11-16</td>
+                            <td>Re-Akt 200 Hockey Helmet Combo (x3), Vapor 1X Lite Griptac Senior Hockey Stick (x7)</td>
+                            <td>$4,259.93</td> <!-- Total price: $399.99 * 3 + $339.99 * 7 -->
+                            <td><span class="status-badge status-shipped">Shipped</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-015</td>
+                            <td>Moncton - Retail</td>
+                            <td>2024-11-17</td>
+                            <td>Men's Burton Moto Snowboard Boot (x3), Nexus 2N Senior Hockey Gloves (x9)</td>
+                            <td>$3,349.91</td> <!-- Total price: $249.99 * 3 + $299.99 * 9 -->
+                            <td><span class="status-badge status-pending">Pending</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-016</td>
+                            <td>Saint John - Retail</td>
+                            <td>2024-11-18</td>
+                            <td>Re-Akt 200 Hockey Helmet Combo (x4), Medium Cutlass (x4)</td>
+                            <td>$3,099.96</td> <!-- Total price: $399.99 * 4 + $350.00 * 4 -->
+                            <td><span class="status-badge status-processing">Processing</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Complete</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-017</td>
+                            <td>Dieppe - Retail</td>
+                            <td>2024-11-19</td>
+                            <td>Vapor 1X Lite Griptac Senior Hockey Stick (x4), Men's Burton Moto Snowboard Boot (x4)</td>
+                            <td>$3,359.96</td> <!-- Total price: $339.99 * 4 + $249.99 * 4 -->
+                            <td><span class="status-badge status-shipped">Shipped</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>#SO-018</td>
+                            <td>Fredericton - Retail</td>
+                            <td>2024-11-20</td>
+                            <td>Re-Akt 200 Hockey Helmet Combo (x6), Medium Cutlass (x2)</td>
+                            <td>$3,599.94</td> <!-- Total price: $399.99 * 6 + $350.00 * 2 -->
+                            <td><span class="status-badge status-emergency">Emergency</span></td>
+                            <td>
+                                <button class="action-btn btn-primary">Process</button>
+                                <button class="action-btn btn-secondary">View</button>
+                            </td>
+                        </tr>
+                        
                     </tbody>
                 </table>
             </div>
         </div>
 
         <div class="card">
-            <a href = "store.html" class="btn-primary">Create Store Order</a>
+            <a href = "store.html" class="action-btn btn-primary">Create Store Order</a>
         </div>
     </div>
 </body>
