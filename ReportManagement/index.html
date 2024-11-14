@@ -4,7 +4,117 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Reports Overview</title>
-    <link rel="stylesheet" href="styles.css">
+    
+    <style>
+
+        /* General reset and box-sizing */
+*,
+*::before,
+*::after {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+/* Body styling */
+body {
+    font-family: 'Roboto', sans-serif;
+    background-color: #f5f5f5;
+    color: #333;
+    line-height: 1.6;
+    margin: 0;
+    padding: 0;
+}
+
+/* Header styling */
+header {
+    background-color: #dc3545;
+    color: white;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 2.5rem;
+    font-weight: 700;
+}
+
+/* Main content styling */
+main {
+    max-width: 2000px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Section headings */
+main h2 {
+    font-size: 1.8rem;
+    color: #dc3545;
+    margin-bottom: 1.5rem;
+}
+
+/* Report list styling */
+.report-list {
+    list-style-type: none;
+    padding: 0;
+}
+
+.report-list li {
+    margin: 1rem 0;
+}
+
+.report-list li a {
+    text-decoration: none;
+    font-size: 1.2rem;
+    color: #003366;
+    padding: 0.8rem;
+    display: block;
+    border-radius: 5px;
+    transition: background-color 0.3s, color 0.3s;
+}
+
+/* Hover effect for links */
+.report-list li a:hover {
+    background-color: #f597a1;
+    color: white;
+}
+
+/* Footer styling */
+footer {
+    background-color: #dc3545;
+    color: white;
+    text-align: center;
+    padding: 1rem;
+    position: fixed;
+    width: 100%;
+    bottom: 0;
+}
+
+footer p {
+    font-size: 1rem;
+    margin: 0;
+}
+
+/* Responsive design */
+@media (max-width: 768px) {
+    header h1 {
+        font-size: 2rem;
+    }
+
+    main {
+        padding: 1.5rem;
+    }
+
+    .report-list li a {
+        font-size: 1.1rem;
+        padding: 1rem;
+    }
+}
+    </style>
+    
 </head>
 <body>
     <header>
@@ -14,18 +124,17 @@
     <main>
         <h2>Select a Report</h2>
         <ul class="report-list">
+            <li><a href="inventory-report.html">Inventory Report</a></li>
             <li><a href="loss-report.html">Loss Report</a></li>
             <li><a href="sales-trend-report.html">Sales Trend Report</a></li>
             <li><a href="emergency-orders-report.html">Emergency Orders Report</a></li>
-            <li><a href="supplier-shipments-report.html">Supplier Shipments Report</a></li>
-            <li><a href="shipping-costs-report.html">Shipping Costs Report</a></li>
             <li><a href="store-order-status-report.html">Store Order Status Report</a></li>
-            <li><a href="acadia-report.html">Acadia Report</a></li>
+            
         </ul>
     </main>
 
     <footer>
-        <p>&copy; 2024 Your Company Name</p>
+        <p>&copy; Bullseye Sporting Goods</p>
     </footer>
 </body>
 </html>

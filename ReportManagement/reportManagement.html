@@ -186,40 +186,21 @@
                     <span>Emergency Orders Report</span>
                     <button class="view-btn" onclick="toggleModal('emergencyOrdersForm')">Create</button>
                 </div>
-                <div class="report-item">
-                    <span>Shipments from Suppliers Report</span>
-                    <button class="view-btn" onclick="toggleModal('supplierShipmentsForm')">Create</button>
-                </div>
-                <div class="report-item">
-                    <span>Shipping Costs Report</span>
-                    <button class="view-btn" onclick="toggleModal('shippingCostsForm')">Create</button>
-                </div>
+                
                 <div class="report-item">
                     <span>Store Order Status</span>
                     <button class="view-btn" onclick="toggleModal('storeOrderStatusForm')">Create</button>
                 </div>
-                <div class="report-item">
-                    <span>Acadia Reports</span>
-                    <button class="view-btn" onclick="toggleModal('acadiaReportsForm')">Create</button>
-                </div>
             </div>
-            <button class="create-report-btn" onclick="toggleModal('salesTrendReportForm')">Create Sales Trend Report</button>
-            <button class="create-report-btn" onclick="toggleModal('inventoryReportForm')">Create Inventory Report</button>
+            
             <a href = "index.html" class="create-report-btn">View Reports (Report Index)</a>
         </div>
 
         <!-- Modal Forms -->
         <div id="inventoryReportForm" class="form-modal">
             <div class="report-form">
-                <h3>Create Store and Inventory Report</h3>
-                <div class="form-group">
-                    <label for="inventoryLocation">Location</label>
-                    <select id="inventoryLocation" class="form-control">
-                        <option value="">Select Location</option>
-                        <option value="Warehouse A">Warehouse A</option>
-                        <option value="Warehouse B">Warehouse B</option>
-                    </select>
-                </div>
+                <h3>Create Inventory Report</h3>
+                
                 <div class="form-group">
                     <label for="inventoryStatus">Inventory Status</label>
                     <select id="inventoryStatus" class="form-control">
@@ -246,11 +227,7 @@
                 <div class="form-group">
                     <label for="lossEndDate">End Date</label>
                     <input type="date" id="lossEndDate" class="form-control">
-                </div>
-                <div class="form-group">
-                    <label for="lossReason">Reason for Loss</label>
-                    <input type="text" id="lossReason" class="form-control" placeholder="Enter reason...">
-                </div>
+                </div>  
                 <div class="action-buttons">
                     <button class="submit-btn">Generate Report</button>
                     <button class="cancel-btn" onclick="toggleModal('lossReportForm')">Cancel</button>
@@ -269,14 +246,6 @@
                     <label for="salesTrendEndDate">End Date</label>
                     <input type="date" id="salesTrendEndDate" class="form-control">
                 </div>
-                <div class="form-group">
-                    <label for="salesTrendCriteria">Criteria</label>
-                    <select id="salesTrendCriteria" class="form-control">
-                        <option value="">Select Criteria</option>
-                        <option value="Product Type">Product Type</option>
-                        <option value="Region">Region</option>
-                    </select>
-                </div>
                 <div class="action-buttons">
                     <button class="submit-btn">Generate Report</button>
                     <button class="cancel-btn" onclick="toggleModal('salesTrendReportForm')">Cancel</button>
@@ -288,12 +257,12 @@
             <div class="report-form">
                 <h3>Create Emergency Orders Report</h3>
                 <div class="form-group">
-                    <label for="emergencyOrderDate">Order Date</label>
-                    <input type="date" id="emergencyOrderDate" class="form-control">
+                    <label for="shipmentStartDate">Start Date</label>
+                    <input type="date" id="shipmentStartDate" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="emergencySupplier">Supplier</label>
-                    <input type="text" id="emergencySupplier" class="form-control" placeholder="Enter supplier...">
+                    <label for="shipmentEndDate">End Date</label>
+                    <input type="date" id="shipmentEndDate" class="form-control">
                 </div>
                 <div class="action-buttons">
                     <button class="submit-btn">Generate Report</button>
@@ -317,6 +286,19 @@
                     <label for="shipmentSupplier">Supplier</label>
                     <input type="text" id="shipmentSupplier" class="form-control" placeholder="Enter supplier...">
                 </div>
+                <div class="form-group">
+                    <label for="inventoryLocation">Location</label>
+                    <select id="inventoryLocation" class="form-control">
+                        <option value="">Select Location</option>
+                        <option value="Warehouse A">Saint John Retail</option>
+                        <option value="Warehouse B">Sussex Retail</option>
+                        <option value="Warehouse C">Moncton Retail</option>
+                        <option value="Warehouse D">Dieppe Retail</option>
+                        <option value="Warehouse E">Oromocto Retail</option>
+                        <option value="Warehouse F">Fredericton Retail</option>
+                        <option value="Warehouse G">Miramichi Retail</option>
+                    </select>
+                </div>
                 <div class="action-buttons">
                     <button class="submit-btn">Generate Report</button>
                     <button class="cancel-btn" onclick="toggleModal('supplierShipmentsForm')">Cancel</button>
@@ -339,6 +321,19 @@
                     <label for="shippingMethod">Shipping Method</label>
                     <input type="text" id="shippingMethod" class="form-control" placeholder="Enter method...">
                 </div>
+                <div class="form-group">
+                    <label for="inventoryLocation">Location</label>
+                    <select id="inventoryLocation" class="form-control">
+                        <option value="">Select Location</option>
+                        <option value="Warehouse A">Saint John Retail</option>
+                        <option value="Warehouse B">Sussex Retail</option>
+                        <option value="Warehouse C">Moncton Retail</option>
+                        <option value="Warehouse D">Dieppe Retail</option>
+                        <option value="Warehouse E">Oromocto Retail</option>
+                        <option value="Warehouse F">Fredericton Retail</option>
+                        <option value="Warehouse G">Miramichi Retail</option>
+                    </select>
+                </div>
                 <div class="action-buttons">
                     <button class="submit-btn">Generate Report</button>
                     <button class="cancel-btn" onclick="toggleModal('shippingCostsForm')">Cancel</button>
@@ -350,16 +345,12 @@
             <div class="report-form">
                 <h3>Create Store Order Status Report</h3>
                 <div class="form-group">
-                    <label for="storeOrderDate">Order Date</label>
-                    <input type="date" id="storeOrderDate" class="form-control">
+                    <label for="shippingStartDate">Start Date</label>
+                    <input type="date" id="shippingStartDate" class="form-control">
                 </div>
                 <div class="form-group">
-                    <label for="storeStatus">Order Status</label>
-                    <select id="storeStatus" class="form-control">
-                        <option value="">Select Status</option>
-                        <option value="Pending">Pending</option>
-                        <option value="Completed">Completed</option>
-                    </select>
+                    <label for="shippingEndDate">End Date</label>
+                    <input type="date" id="shippingEndDate" class="form-control">
                 </div>
                 <div class="action-buttons">
                     <button class="submit-btn">Generate Report</button>

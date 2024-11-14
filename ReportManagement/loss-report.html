@@ -2,28 +2,128 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Loss Report</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sporting Goods Company - Loss Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .report-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .section h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .summary {
+            background-color: #f9f9f9;
+            padding: 10px;
+            border-left: 4px solid #f00;
+        }
+        .loss-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .loss-details th, .loss-details td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .loss-details th {
+            background-color: #f2f2f2;
+        }
+
+        .logo {
+            width:100px;
+        }
+
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Loss Report</h1>
-    </header>
-
-    <main>
-        <h2>Report Details</h2>
-        <div class="report-details">
-            <p><strong>Reason for Loss:</strong> <span id="lossReasonDisplay">Damaged Goods</span></p>
-            <p><strong>Date of Loss:</strong> <span id="lossDateDisplay">2024-11-05</span></p>
-            <p><strong>Report Generated On:</strong> <span id="reportDateDisplay">2024-11-05</span></p>
+    <div class="report-container">
+        <div class="header">
+            <h1>Loss Report</h1>
+            <p><strong>Company Name:</strong> Bullseye Sporting Goods</p>
+            <img src = "../bullseye.png" alt = "Bullseye Sporting Goods Logo" class = "logo">
+            <p><strong>Date:</strong> November 14, 2024</p>
+        </div>
+        
+        <div class="section">
+            <h3>Summary</h3>
+            <div class="summary">
+                <p>During the month of October 2024, Bullseye Sporting Goods experienced significant inventory losses due to theft and damage. The total estimated loss for this period amounts to $19,939.75.</p>
+            </div>
         </div>
 
-        <button class="back-btn" onclick="window.location.href='index.html'">Back to Reports</button>
-    </main>
+        <div class="section loss-details">
+            <h3>Loss Details</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Quantity Lost</th>
+                        <th>Unit Cost ($)</th>
+                        <th>Total Loss ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jetspeed FT1 Senior Ice Hockey Skates</td>
+                        <td>Sports Equipment</td>
+                        <td>2</td>
+                        <td>999.99</td>
+                        <td>1,999.98</td>
+                    </tr>
+                    <tr>
+                        <td>Vapor 1X Lite Griptac Senior Hockey Stick</td>
+                        <td>Sports Equipment</td>
+                        <td>10</td>
+                        <td>339.99</td>
+                        <td>3,399.90</td>
+                    </tr>
+                    <tr>
+                        <td>Re-Akt 200 Hockey Helmet Combo</td>
+                        <td>Sports Equipment</td>
+                        <td>10</td>
+                        <td>399.99</td>
+                        <td>3,999.90</td>
+                    </tr>
+                    <tr>
+                        <td>Nexus 2N Senior Hockey Gloves</td>
+                        <td>Sports Equipment</td>
+                        <td>10</td>
+                        <td>299.99</td>
+                        <td>2,999.90</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" style="text-align: right;"><strong>Total Estimated Loss:</strong></td>
+                        <td><strong>$19,939.75</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
-    <footer>
-        <p>&copy; 2024 Your Company Name</p>
-    </footer>
+        <div class="section">
+            <h3>Comments</h3>
+            <p>The increase in losses is attributed to recent rise in theft and handling errors in the warehouse. Immediate action to improve security protocols and staff training is recommended to prevent future incidents.</p>
+        </div>
+    </div>
 </body>
 </html>

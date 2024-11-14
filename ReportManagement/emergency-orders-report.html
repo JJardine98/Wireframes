@@ -2,27 +2,132 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Emergency Orders Report</title>
-    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .report-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .section h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .summary {
+            background-color: #ffe4e1;
+            padding: 10px;
+            border-left: 4px solid #dc3545;
+        }
+        .details-table table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .details-table th, .details-table td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .details-table th {
+            background-color: #f2f2f2;
+        }
+
+        .logo {
+            width:100px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Emergency Orders Report</h1>
-    </header>
+    <div class="report-container">
+        <div class="header">
+            <h1>Emergency Orders Report</h1>
+            <p><strong>Company Name:</strong> Bullseye Sporting Goods</p>
+            <img src="../bullseye.png" alt="Bullseye Sporting Goods Logo" class="logo">
+            <p><strong>Date:</strong> November 14, 2024</p>
+        </div>
+        
+        <div class="section">
+            <h3>Summary</h3>
+            <div class="summary">
+                <p>This report provides an overview of emergency orders placed during Q4 2024, including the total number of orders and their distribution across various locations. These insights help identify hotspots and better prepare for logistical challenges.</p>
+            </div>
+        </div>
 
-    <main>
-        <h2>Recent Emergency Orders</h2>
-        <ul>
-            <li>Order #12345 - Supplier: ABC Corp - Date: 2024-10-15</li>
-            <li>Order #12346 - Supplier: XYZ Inc - Date: 2024-10-20</li>
-        </ul>
+        <div class="section details-table">
+            <h3>Emergency Orders by Location</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Location</th>
+                        <th>Number of Orders</th>
+                        <th>Percentage of Total Orders (%)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Saint John Retail</td>
+                        <td>150</td>
+                        <td>25%</td>
+                    </tr>
+                    <tr>
+                        <td>Sussex Retail</td>
+                        <td>120</td>
+                        <td>20%</td>
+                    </tr>
+                    <tr>
+                        <td>Moncton Retail</td>
+                        <td>90</td>
+                        <td>15%</td>
+                    </tr>
+                    <tr>
+                        <td>Dieppe Retail</td>
+                        <td>70</td>
+                        <td>11.7%</td>
+                    </tr>
+                    <tr>
+                        <td>Oromocto Retail</td>
+                        <td>60</td>
+                        <td>10%</td>
+                    </tr>
+                    <tr>
+                        <td>Fredericton Retail</td>
+                        <td>50</td>
+                        <td>8.3%</td>
+                    </tr>
+                    <tr>
+                        <td>Miramichi Retail</td>
+                        <td>60</td>
+                        <td>10%</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="2" style="text-align: right;"><strong>Total Number of Orders:</strong></td>
+                        <td><strong>600</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
-        <button class="back-btn" onclick="window.location.href='index.html'">Back to Reports</button>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Your Company Name</p>
-    </footer>
+        <div class="section">
+            <h3>Comments</h3>
+            <p>The majority of emergency orders were concentrated in Saint John, leading at 25%. Sussex and Moncton followed as key locations. This trend suggests high demand in these areas, necessitating improved inventory management and distribution strategies.</p>
+        </div>
+    </div>
 </body>
 </html>

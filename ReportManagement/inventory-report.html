@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sporting Goods Company - Store Inventory Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .report-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 900px;
+            margin: auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .section h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .inventory-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .inventory-details th, .inventory-details td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .inventory-details th {
+            background-color: #f2f2f2;
+        }
+        .status-in-stock {
+            background-color: #d4edda;
+            color: #155724;
+        }
+        .status-backorder {
+            background-color: #fff3cd;
+            color: #856404;
+        }
+        .status-out-of-stock {
+            background-color: #f8d7da;
+            color: #721c24;
+        }
+        .logo {
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+    <div class="report-container">
+        <div class="header">
+            <h1>Store Inventory Report</h1>
+            <p><strong>Company Name:</strong> Bullseye Sporting Goods</p>
+            <img src="../bullseye.png" alt="Bullseye Sporting Goods Logo" class="logo">
+            <p><strong>Date:</strong> November 14, 2024</p>
+        </div>
+
+        <div class="section">
+            <h3>Inventory Status Overview</h3>
+            <p>The following inventory status report outlines product availability across our various locations. It includes items marked as "In Stock", "Backorder", and "Out of Stock".</p>
+        </div>
+
+        <div class="section inventory-details">
+            <h3>Inventory Details by Location</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Product</th>
+                        <th>Location</th>
+                        <th>Stock Status</th>
+                        <th>Quantity Available</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="status-in-stock">
+                        <td>Jetspeed FT1 Senior Ice Hockey Skates</td>
+                        <td>Saint John - Retail</td>
+                        <td>In-Stock</td>
+                        <td>5</td>
+                    </tr>
+                    <tr class="status-backorder">
+                        <td>Vapor 1X Lite Griptac Senior Hockey Stick</td>
+                        <td>Sussex - Retail</td>
+                        <td>Backorder</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="status-out-of-stock">
+                        <td>Re-Akt 200 Hockey Helmet Combo</td>
+                        <td>Fredericton - Retail</td>
+                        <td>Out of Stock</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="status-in-stock">
+                        <td>Nexus 2N Senior Hockey Gloves</td>
+                        <td>Dieppe - Wholesale</td>
+                        <td>In-Stock</td>
+                        <td>8</td>
+                    </tr>
+                    <tr class="status-backorder">
+                        <td>JetSpeed FT2 Ice Hockey Skates</td>
+                        <td>Moncton - Wholesale</td>
+                        <td>Backorder</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="status-out-of-stock">
+                        <td>Vapor 1X Senior Hockey Stick</td>
+                        <td>Fredericton - Wholesale</td>
+                        <td>Out of Stock</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="status-in-stock">
+                        <td>Re-Akt 100 Hockey Helmet Combo</td>
+                        <td>Saint John - Wholesale</td>
+                        <td>In-Stock</td>
+                        <td>12</td>
+                    </tr>
+                    <tr class="status-backorder">
+                        <td>Nexus 2N Senior Gloves</td>
+                        <td>Sussex - Wholesale</td>
+                        <td>Backorder</td>
+                        <td>0</td>
+                    </tr>
+                    <tr class="status-in-stock">
+                        <td>Vapor 1X Lite Junior Hockey Stick</td>
+                        <td>Dieppe - Retail</td>
+                        <td>In-Stock</td>
+                        <td>10</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <div class="section">
+            <h3>Comments</h3>
+            <p>We recommend reviewing the backordered and out-of-stock items to assess potential lead times for replenishment. Action may be required to expedite the shipment of high-demand items to avoid stockouts at key locations.</p>
+        </div>
+    </div>
+</body>
+</html>

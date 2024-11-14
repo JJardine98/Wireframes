@@ -2,31 +2,127 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Sales Trend Report</title>
-    <link rel="stylesheet" href="styles.css">
+    <title>Sporting Goods Company - Sales Trend Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+            line-height: 1.6;
+        }
+        .report-container {
+            border: 1px solid #ccc;
+            padding: 20px;
+            max-width: 800px;
+            margin: auto;
+        }
+        .header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .section {
+            margin-bottom: 15px;
+        }
+        .section h3 {
+            border-bottom: 2px solid #333;
+            padding-bottom: 5px;
+        }
+        .summary {
+            background-color: #e9f7ef;
+            padding: 10px;
+            border-left: 4px solid #28a745;
+        }
+        .trend-details table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 10px;
+        }
+        .trend-details th, .trend-details td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        .trend-details th {
+            background-color: #f2f2f2;
+        }
+
+        .logo {
+            width:100px;
+        }
+    </style>
 </head>
 <body>
-    <header>
-        <h1>Sales Trend Report</h1>
-    </header>
+    <div class="report-container">
+        <div class="header">
+            <h1>Sales Trend Report</h1>
+            <p><strong>Company Name:</strong> Bullseye Sporting Goods</p>
+            <img src="../bullseye.png" alt="Bullseye Sporting Goods Logo" class="logo">
+            <p><strong>Date:</strong> November 14, 2024</p>
+        </div>
+        
+        <div class="section">
+            <h3>Summary</h3>
+            <div class="summary">
+                <p>Sales for Bullseye Sporting Goods showed a significant increase during Q3 2024. The total sales revenue amounted to $234,567.89, representing a 15% growth compared to the previous quarter.</p>
+            </div>
+        </div>
 
-    <main>
-        <h2>Select Date Range</h2>
-        <label for="startDate">Start Date:</label>
-        <input type="date" id="startDate">
-        <label for="endDate">End Date:</label>
-        <input type="date" id="endDate">
-        <button>Generate Report</button>
+        <div class="section trend-details">
+            <h3>Top-Selling Products</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Item</th>
+                        <th>Category</th>
+                        <th>Units Sold</th>
+                        <th>Unit Price ($)</th>
+                        <th>Total Revenue ($)</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Jetspeed FT1 Senior Ice Hockey Skates</td>
+                        <td>Sports Equipment</td>
+                        <td>50</td>
+                        <td>999.99</td>
+                        <td>49,999.50</td>
+                    </tr>
+                    <tr>
+                        <td>Vapor 1X Lite Griptac Senior Hockey Stick</td>
+                        <td>Sports Equipment</td>
+                        <td>120</td>
+                        <td>339.99</td>
+                        <td>40,798.80</td>
+                    </tr>
+                    <tr>
+                        <td>Re-Akt 200 Hockey Helmet Combo</td>
+                        <td>Sports Equipment</td>
+                        <td>80</td>
+                        <td>399.99</td>
+                        <td>31,999.20</td>
+                    </tr>
+                    <tr>
+                        <td>Nexus 2N Senior Hockey Gloves</td>
+                        <td>Sports Equipment</td>
+                        <td>95</td>
+                        <td>299.99</td>
+                        <td>28,499.05</td>
+                    </tr>
+                </tbody>
+                <tfoot>
+                    <tr>
+                        <td colspan="4" style="text-align: right;"><strong>Total Revenue:</strong></td>
+                        <td><strong>$234,567.89</strong></td>
+                    </tr>
+                </tfoot>
+            </table>
+        </div>
 
-        <h2>Sales Data</h2>
-        <p>Data visualization will be displayed here.</p>
-
-        <button class="back-btn" onclick="window.location.href='index.html'">Back to Reports</button>
-    </main>
-
-    <footer>
-        <p>&copy; 2024 Your Company Name</p>
-    </footer>
+        <div class="section">
+            <h3>Comments</h3>
+            <p>The sales surge can be attributed to seasonal promotions and increased demand during the start of the hockey season. Continued marketing efforts and promotional events are recommended to maintain this growth trend.</p>
+        </div>
+    </div>
 </body>
 </html>
