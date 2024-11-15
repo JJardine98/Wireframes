@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Bullseye Sporting Goods - Supplier Forms</title>
+    <style>
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+      }
+
+      .form-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
+
+      h1 {
+        color: #b00000;
+        margin-bottom: 20px;
+      }
+
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
+
+      .form-group {
+        margin-bottom: 15px;
+      }
+
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+      }
+
+      input[type="text"],
+      input[type="tel"],
+      input[type="number"] {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
+
+      .button-group {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
+
+      .submit-button {
+        background-color: #b00000;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .cancel-button {
+        background-color: #666;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
+
+      .readonly-field {
+        background-color: #f5f5f5;
+        cursor: not-allowed;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- Add Supplier Form -->
+    <div class="form-container">
+      <h1>Permissions</h1>
+      <form id="addSupplierForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="newSupplierID">Permission Name:</label>
+            <input type="text" id="newSupplierID" required />
+          </div>
+          <div class="form-group">
+            <label for="newName">Description:</label>
+            <input type="text" id="newName" required />
+          </div>
+
+          <div class="button-group">
+            <button type="button" class="cancel-button">Cancel</button>
+            <button type="submit" class="submit-button">Add New Permission</button>
+          </div>
+        </div>
+      </form>
+    </div>
+
+    <!-- Add Supplier Form -->
+    <div class="form-container">
+        <h1>Permission Role</h1>
+        <form id="addSupplierForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="newSupplierID">Permission Name:</label>
+              <input placeholder="View Inventory" type="text" id="newSupplierID" required />
+            </div>
+            <div class="form-group">
+              <label for="newName">Description:</label>
+              <input placeholder= "Can view inventory levels" type="text" id="newName" required />
+            </div>
+  
+            <div class="button-group">
+              <button type="button" class="cancel-button">Cancel</button>
+              <button type="submit" class="submit-button">Save Changes</button>
+            </div>
+          </div>
+        </form>
+      </div>
+        </div>
+      </form>
+    </div>
+  </body>
+</html>

@@ -1,230 +1,233 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bullseye Sporting Goods - Location Forms</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 20px;
-            background-color: #f5f5f5;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 20px;
+        background-color: #f5f5f5;
+      }
 
-        .form-container {
-            max-width: 800px;
-            margin: 0 auto;
-            padding: 20px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-            border-radius: 8px;
-            margin-bottom: 30px;
-        }
+      .form-container {
+        max-width: 800px;
+        margin: 0 auto;
+        padding: 20px;
+        background-color: white;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        border-radius: 8px;
+        margin-bottom: 30px;
+      }
 
-        h1 {
-            color: #b00000;
-            margin-bottom: 20px;
-        }
+      h1 {
+        color: #b00000;
+        margin-bottom: 20px;
+      }
 
-        .form-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 20px;
-        }
+      .form-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+      }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+      .form-group {
+        margin-bottom: 15px;
+      }
 
-        label {
-            display: block;
-            margin-bottom: 5px;
-            font-weight: bold;
-            color: #333;
-        }
+      label {
+        display: block;
+        margin-bottom: 5px;
+        font-weight: bold;
+        color: #333;
+      }
 
-        input[type="text"],
-        input[type="tel"],
-        input[type="number"],
-        select,
-        textarea {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+      input[type="text"],
+      input[type="tel"],
+      input[type="number"],
+      select,
+      textarea {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 
-        textarea {
-            height: 100px;
-            resize: vertical;
-        }
+      textarea {
+        height: 100px;
+        resize: vertical;
+      }
 
-        .full-width {
-            grid-column: 1 / -1;
-        }
+      .full-width {
+        grid-column: 1 / -1;
+      }
 
-        .button-group {
-            grid-column: 1 / -1;
-            display: flex;
-            gap: 10px;
-            justify-content: flex-end;
-            margin-top: 20px;
-        }
+      .button-group {
+        grid-column: 1 / -1;
+        display: flex;
+        gap: 10px;
+        justify-content: flex-end;
+        margin-top: 20px;
+      }
 
-        .submit-button {
-            background-color: #b00000;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+      .submit-button {
+        background-color: #b00000;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-        .cancel-button {
-            background-color: #666;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+      .cancel-button {
+        background-color: #666;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-        .readonly-field {
-            background-color: #f5f5f5;
-            cursor: not-allowed;
-        }
+      .readonly-field {
+        background-color: #f5f5f5;
+        cursor: not-allowed;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <!-- Add Location Form -->
     <div class="form-container">
-        <h1>Add New Location</h1>
-        <form id="addLocationForm">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="newLocationID">Location ID:</label>
-                    <input type="number" id="newLocationID" required>
-                </div>
-                <div class="form-group">
-                    <label for="newName">Location Name:</label>
-                    <input type="text" id="newName" required>
-                </div>
-                <div class="form-group">
-                    <label for="newType">Location Type:</label>
-                    <select id="newType" required>
-                        <option value="">Select Type</option>
-                        <option value="store">Store</option>
-                        <option value="warehouse">Warehouse</option>
-                        <option value="office">Office</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="newStatus">Status:</label>
-                    <select id="newStatus" required>
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="newAddress1">Address Line 1:</label>
-                    <input type="text" id="newAddress1" required>
-                </div>
-                <div class="form-group">
-                    <label for="newAddress2">Address Line 2:</label>
-                    <input type="text" id="newAddress2">
-                </div>
-                <div class="form-group">
-                    <label for="newCity">City:</label>
-                    <input type="text" id="newCity" required>
-                </div>
-                <div class="form-group">
-                    <label for="newProvince">Province:</label>
-                    <input type="text" id="newProvince" required maxlength="2">
-                </div>
-                <div class="form-group">
-                    <label for="newPostalCode">Postal Code:</label>
-                    <input type="text" id="newPostalCode" required pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
-                </div>
-                <div class="form-group">
-                    <label for="newPhone">Phone:</label>
-                    <input type="tel" id="newPhone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                </div>
-                <div class="form-group full-width">
-                    <label for="newNotes">Notes:</label>
-                    <textarea id="newNotes"></textarea>
-                </div>
-                <div class="button-group">
-                    <button type="button" class="cancel-button">Cancel</button>
-                    <button type="submit" class="submit-button">Add Location</button>
-                </div>
-            </div>
-        </form>
+      <h1>Add New Location</h1>
+      <form id="addLocationForm">
+        <div class="form-grid">
+          <div class="form-group">
+            <label for="newLocationID">Location ID:</label>
+            <input type="number" id="newLocationID" required />
+          </div>
+          <div class="form-group">
+            <label for="newName">Location Name:</label>
+            <input type="text" id="newName" required />
+          </div>
+          <div class="form-group">
+            <label for="newAddress1">Address Line 1:</label>
+            <input type="text" id="newAddress1" required />
+          </div>
+          <div class="form-group">
+            <label for="newAddress2">Address Line 2:</label>
+            <input type="text" id="newAddress2" />
+          </div>
+          <div class="form-group">
+            <label for="newCity">City:</label>
+            <input type="text" id="newCity" required />
+          </div>
+          <div class="form-group">
+            <label for="newProvince">Province:</label>
+            <input type="text" id="newProvince" required maxlength="2" />
+          </div>
+          <div class="form-group">
+            <label for="newPostalCode">Postal Code:</label>
+            <input
+              type="text"
+              id="newPostalCode"
+              required
+              pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+            />
+          </div>
+          <div class="form-group">
+            <label for="newPhone">Phone:</label>
+            <input
+              type="tel"
+              id="newPhone"
+              required
+              pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+            />
+          </div>
+          <div class="form-group">
+            <label for="dayofWeek">Day of Week</label>
+            <input type="text" id="dayofWeek" required />
+          </div>
+          <div class="form-group">
+            <label for="dayofWeek">Distance</label>
+            <input type="text" id="dayofWeek" required />
+          </div>
+          
+          <div class="button-group">
+            <button type="button" class="cancel-button">Cancel</button>
+            <button type="submit" class="submit-button">Add Location</button>
+          </div>
+        </div>
+      </form>
     </div>
 
     <!-- Edit Location Form -->
     <div class="form-container">
         <h1>Edit Location</h1>
-        <form id="editLocationForm">
-            <div class="form-grid">
-                <div class="form-group">
-                    <label for="editLocationID">Location ID:</label>
-                    <input type="number" id="editLocationID" readonly class="readonly-field">
-                </div>
-                <div class="form-group">
-                    <label for="editName">Location Name:</label>
-                    <input type="text" id="editName" required>
-                </div>
-                <div class="form-group">
-                    <label for="editType">Location Type:</label>
-                    <select id="editType" required>
-                        <option value="">Select Type</option>
-                        <option value="store">Store</option>
-                        <option value="warehouse">Warehouse</option>
-                        <option value="office">Office</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="editStatus">Status:</label>
-                    <select id="editStatus" required>
-                        <option value="active">Active</option>
-                        <option value="inactive">Inactive</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label for="editAddress1">Address Line 1:</label>
-                    <input type="text" id="editAddress1" required>
-                </div>
-                <div class="form-group">
-                    <label for="editAddress2">Address Line 2:</label>
-                    <input type="text" id="editAddress2">
-                </div>
-                <div class="form-group">
-                    <label for="editCity">City:</label>
-                    <input type="text" id="editCity" required>
-                </div>
-                <div class="form-group">
-                    <label for="editProvince">Province:</label>
-                    <input type="text" id="editProvince" required maxlength="2">
-                </div>
-                <div class="form-group">
-                    <label for="editPostalCode">Postal Code:</label>
-                    <input type="text" id="editPostalCode" required pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]">
-                </div>
-                <div class="form-group">
-                    <label for="editPhone">Phone:</label>
-                    <input type="tel" id="editPhone" required pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}">
-                </div>
-                <div class="form-group full-width">
-                    <label for="editNotes">Notes:</label>
-                    <textarea id="editNotes"></textarea>
-                </div>
-                <div class="button-group">
-                    <button type="button" class="cancel-button">Cancel</button>
-                    <button type="submit" class="submit-button">Save Changes</button>
-                </div>
+        <form id="addLocationForm">
+          <div class="form-grid">
+            <div class="form-group">
+              <label for="newLocationID">Location ID:</label>
+              <input placeholder="4" type="number" id="newLocationID" required />
             </div>
+            <div class="form-group">
+              <label for="newName">Location Name:</label>
+              <input placeholder="Saint John - Retail" type="text" id="newName" required />
+            </div>
+            <div class="form-group">
+              <label for="newAddress1">Address Line 1:</label>
+              <input placeholder="519 Westmorland Road" type="text" id="newAddress1" required />
+            </div>
+            <div class="form-group">
+              <label for="newAddress2">Address Line 2:</label>
+              <input type="text" id="newAddress2" />
+            </div>
+            <div class="form-group">
+              <label for="newCity">City:</label>
+              <input placeholder="Saint John" type="text" id="newCity" required />
+            </div>
+            <div class="form-group">
+              <label for="newProvince">Province:</label>
+              <input placeholder="NB" type="text" id="newProvince" required maxlength="2" />
+            </div>
+            <div class="form-group">
+              <label for="newPostalCode">Postal Code:</label>
+              <input
+              placeholder="E2J3W9"
+                type="text"
+                id="newPostalCode"
+                required
+                pattern="[A-Za-z][0-9][A-Za-z] [0-9][A-Za-z][0-9]"
+              />
+            </div>
+            <div class="form-group">
+              <label for="newPhone">Phone:</label>
+              <input
+              placeholder="506-696-6229"
+                type="tel"
+                id="newPhone"
+                required
+                pattern="[0-9]{3}-[0-9]{3}-[0-9]{4}"
+              />
+            </div>
+            <div class="form-group">
+              <label for="dayofWeek">Day of Week</label>
+              <input placeholder="Monday" type="text" id="dayofWeek" required />
+            </div>
+            <div class="form-group">
+              <label for="distancek">Distance</label>
+              <input placeholder="5KM" type="text" id="distance" required />
+            </div>
+            
+            <div class="button-group">
+              <button type="button" class="cancel-button">Cancel</button>
+              <button type="submit" class="submit-button">Save Changes</button>
+            </div>
+          </div>
         </form>
+      </div>
+        </div>
+      </form>
     </div>
-</body>
+  </body>
 </html>
