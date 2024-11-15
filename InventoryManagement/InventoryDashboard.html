@@ -1,154 +1,394 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="styles.css">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="styles.css" />
     <title>Bullseye Sporting Goods - Inventory Dashboard</title>
-</head>
-<body>
+  </head>
+  <body>
     <header class="header">
-        <p>User: jperez</p>
-        <p>Access Level: Store Manager</p>
-        <select id="location" required>
-            <option value="" disabled selected>Select a location</option>
-            <option value="Saint John Retail">Saint John Retail</option>
-            <option value="Sussex Retail">Sussex Retail</option>
-            <option value="Moncton Retail">Moncton Retail</option>
-            <option value="Dieppe Retail">Dieppe Retail</option>
-            <option value="Oromocto Retail">Oromocto Retail</option>
-            <option value="Fredericton Retail">Fredericton Retail</option>
-            <option value="Miramichi Retail">Miramichi Retail</option>
-            <option value="Warehouse">Warehouse</option>
-        
-        </select>
+      <p>User: jperez</p>
+      <p>Access Level: Store Manager</p>
+      <select id="location" required>
+        <option value="" disabled selected>Select a location</option>
+        <option value="Saint John Retail">Saint John Retail</option>
+        <option value="Sussex Retail">Sussex Retail</option>
+        <option value="Moncton Retail">Moncton Retail</option>
+        <option value="Dieppe Retail">Dieppe Retail</option>
+        <option value="Oromocto Retail">Oromocto Retail</option>
+        <option value="Fredericton Retail">Fredericton Retail</option>
+        <option value="Miramichi Retail">Miramichi Retail</option>
+        <option value="Warehouse">Warehouse</option>
+      </select>
     </header>
 
     <h1>Inventory Manager</h1>
 
     <div class="search-container">
-        <input type="text" class="search-input" placeholder="Scan Barcode, Search by Description or Enter SKU/Item ID">
+      <input
+        type="text"
+        class="search-input"
+        placeholder="Scan Barcode, Search by Description or Enter SKU/Item ID"
+      />
     </div>
 
-    <a href="InventoryItemForm.html" class="button">Add/Edit Item (Admin / Managers)</a>
+    <a href="InventoryItemForm.html" class="button"
+      >Add/Edit Item (Admin / Managers)</a
+    >
     <a href="IndividualItem.html" class="button">Perform Inventory</a>
     <a href="../Dashboard/dashboard.html" class="button">Dashboard</a>
 
-    
     <div class="product-grid">
-        <div class="product-card">
-            <div class="product-id">10000</div>
-            <div class="product-title">Jetspeed FT1 Senior Ice Hockey Skates</div>
-            <div class="product-details">
-                <span>SKU#: 60000</span>
-            </div>
-            <img src="../Images/ft1.jpg" class="product-image" alt="Paint">
-            <div class="location-tag">Weight: 5.00 LBS</div>
-            <div class="location-tag">Category: Sports Equipment</div>
-            <div class="stock-info">In Stock: 2</div>
-            <div class="stock-info">Case Size: 1</div>
-            <div class="price">$999.99</div>
-            <div class="action-buttons">
-                
-                <button class="button">Delete</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-id">10013</div>
-            <div class="product-title">Vapor 1X Lite Griptac Senior Hockey Stick</div>
-            <div class="product-details">
-                <span>SKU#: 60013</span>
-            </div>
-            <img src="../Images/1xlite.webp" class="product-image" alt="Paint">
-            <div class="location-tag">Weight: 3.00 LBS</div>
-            <div class="location-tag">Category: Sports Equipment</div>
-            <div class="stock-info">In Stock: 10</div>
-            <div class="stock-info">Case Size: 20</div>
-            <div class="price">$339.99</div>
-            <div class="action-buttons">
-                
-                <button class="button">Delete</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-id">10025</div>
-            <div class="product-title">Re-Akt 200 Hockey Helmet Combo</div>
-            <div class="product-details">
-                <span>SKU#: 60025</span>
-                
-            </div>
-            <img src="../Images/reakt.webp" class="product-image" alt="Paint">
-            <div class="location-tag">Weight: 3.00 LBS</div>
-            <div class="location-tag">Category: Sports Equipment</div>
-            <div class="stock-info">In Stock: 10</div>
-            <div class="stock-info">Case Size: 10</div>
-            <div class="price">$399.99</div>
-            <div class="action-buttons">
-                
-                <button class="button">Delete</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-id">10042</div>
-            <div class="product-title">Nexus 2N Senior Hockey Gloves</div>
-            <div class="product-details">
-                <span>SKU#: 60042</span>
-            </div>
-            <img src="../Images/nexus2n.jpg" class="product-image" alt="Paint">
-            <div class="location-tag">Weight: 1.00 LBS</div>
-            <div class="location-tag">Category: Sports Equipment</div>
-            <div class="stock-info">In Stock: 4</div>
-            <div class="stock-info">Case Size: 1</div>
-            <div class="price">$299.99</div>
-            <div class="action-buttons">
-                
-                <button class="button">Delete</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-id">10151</div>
-            <div class="product-title">Medium Cutlass</div>
-            <div class="product-details">
-                <span>SKU#: 11153</span>
-            </div>
-            <img src="../Images/cutlass.jpg" class="product-image" alt="Paint">
-            <div class="location-tag">Weight: 1.00 LBS</div>
-            <div class="location-tag">Category: Camping</div>
-            <div class="stock-info">In Stock: 6</div>
-            <div class="stock-info">Case Size: 6</div>
-            <div class="price">$350.00</div>
-            <div class="action-buttons">
-                
-                <button class="button">Delete</button>
-            </div>
-        </div>
-
-        <div class="product-card">
-            <div class="product-id">10233</div>
-            <div class="product-title">Men's Burton Moto Snowboard Boot</div>
-            <div class="product-details">
-                <span>SKU#: 10436</span>
-            </div>
-            <img src="../Images/moto.jpg" class="product-image" alt="Paint">
-            <div class="location-tag">Weight: 2.36 LBS</div>
-            <div class="location-tag">Category: Footwear</div>
-            <div class="stock-info">In Stock: 10</div>
-            <div class="stock-info">Case Size: 5</div>
-            <div class="price">$249.99</div>
-            <div class="action-buttons">
-                
-                <button class="button">Delete</button>
-            </div>
-        </div>
-
-        
-
-        
-        <!-- More product cards can be added here -->
+      <!-- More product cards can be added here -->
     </div>
-</body>
+  </body>
+  <script>
+    // Array of product objects
+    const products = [
+      {
+        id: "10000",
+        title: "Jetspeed FT1 Senior Ice Hockey Skates",
+        sku: "60000",
+        imageUrl: "../Images/ft1.jpg",
+        weight: "5.00 LBS",
+        category: "Sports Equipment",
+        stock: 2,
+        caseSize: 1,
+        price: "$999.99",
+      },
+      {
+        id: "10013",
+        title: "Vapor 1X Lite Griptac Senior Hockey Stick",
+        sku: "60013",
+        imageUrl: "../Images/1xlite.webp",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 20,
+        price: "$339.99",
+      },
+      {
+        id: "10025",
+        title: "Re-Akt 200 Hockey Helmet Combo",
+        sku: "60025",
+        imageUrl: "../Images/reakt.webp",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$399.99",
+      },
+      {
+        id: "10037",
+        title: "Nexus 2N Senior Hockey Gloves",
+        sku: "60037",
+        imageUrl: "../Images/nexus2n.jpg",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$299.99",
+      },
+      {
+        id: "10049",
+        title: "Vapor X800 Lite Senior Hockey Gloves",
+        sku: "60049",
+        imageUrl: "../Images/x800glove.jpg",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$119.99",
+      },
+      {
+        id: "10061",
+        title: "Tacks 7092 Senior Hockey Pants",
+        sku: "60061",
+        imageUrl: "../Images/7092.png",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$169.99",
+      },
+      {
+        id: "10073",
+        title: "Vapor APX2 Senior Hockey Pants",
+        sku: "60073",
+        imageUrl: "../Images/bauer-vapor-apx2-pant.jpg",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$199.99",
+      },
+      {
+        id: "10085",
+        title: "Nexus 1N Senior Ice Hockey Pants",
+        sku: "60085",
+        imageUrl: "../Images/nexus1npants.jpg",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$229.99",
+      },
+      {
+        id: "10097",
+        title: "Nexus 2N Senior Ice Hockey Pants",
+        sku: "60097",
+        imageUrl: "../Images/2npants.jpg",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$229.99",
+      },
+      {
+        id: "10109",
+        title: "Vapor APX2 Senior Hockey Gloves",
+        sku: "60109",
+        imageUrl: "../Images/vaporapx2.jpg",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$119.99",
+      },
+      {
+        id: "10121",
+        title: "Vapor 1X Lite Senior Hockey Gloves",
+        sku: "60121",
+        imageUrl: "../Images/vaporapx2.jpg",
+        weight: "3.00 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$119.99",
+      },
+      {
+        id: "10134",
+        title: "Warrior Alpha One Pro Elbow Pads",
+        sku: "60134",
+        imageUrl: "../Images/warriorpro.webp",
+        weight: "1.50 LBS",
+        category: "Sports Equipment",
+        stock: 15,
+        caseSize: 10,
+        price: "$149.99",
+      },
+      {
+        id: "10135",
+        title: "CCM Ribcor 80K Skates",
+        sku: "60135",
+        imageUrl: "../Images/ribcor.jpg",
+        weight: "4.00 LBS",
+        category: "Sports Equipment",
+        stock: 8,
+        caseSize: 8,
+        price: "$499.99",
+      },
+      {
+        id: "10136",
+        title: "Bauer Vapor X2.7 Hockey Stick",
+        sku: "60136",
+        imageUrl: "../Images/x27.avif",
+        weight: "0.75 LBS",
+        category: "Sports Equipment",
+        stock: 25,
+        caseSize: 10,
+        price: "$229.99",
+      },
+      {
+        id: "10137",
+        title: "True XCore 5.2 Hockey Gloves",
+        sku: "60137",
+        imageUrl: "../Images/trucore.jpg",
+        weight: "1.20 LBS",
+        category: "Sports Equipment",
+        stock: 12,
+        caseSize: 12,
+        price: "$129.99",
+      },
+      {
+        id: "10138",
+        title: "Bauer Supreme 2S Pro Skate",
+        sku: "60138",
+        imageUrl: "../Images/supreme.jpg",
+        weight: "4.50 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$649.99",
+      },
+      {
+        id: "10139",
+        title: "CCM Tacks 9370 Hockey Gloves",
+        sku: "60139",
+        imageUrl: "../Images/9370.jpg",
+        weight: "1.50 LBS",
+        category: "Sports Equipment",
+        stock: 20,
+        caseSize: 12,
+        price: "$179.99",
+      },
+      {
+        id: "10140",
+        title: "Warrior Alpha DX Pro Hockey Stick",
+        sku: "60140",
+        imageUrl: "../Images/x27.avif",
+        weight: "1.00 LBS",
+        category: "Sports Equipment",
+        stock: 12,
+        caseSize: 10,
+        price: "$349.99",
+      },
+      {
+        id: "10141",
+        title: "Easton Stealth CX Hockey Pants",
+        sku: "60141",
+        imageUrl: "../Images/nexus1npants.jpg",
+        weight: "2.50 LBS",
+        category: "Sports Equipment",
+        stock: 30,
+        caseSize: 10,
+        price: "$129.99",
+      },
+      {
+        id: "10142",
+        title: "Warrior Covert QRE Pro Hockey Stick",
+        sku: "60142",
+        imageUrl: "../Images/warriorstick.webp",
+        weight: "0.85 LBS",
+        category: "Sports Equipment",
+        stock: 18,
+        caseSize: 10,
+        price: "$299.99",
+      },
+      {
+        id: "10143",
+        title: "CCM Ribcor Trigger 5 Pro Hockey Stick",
+        sku: "60143",
+        imageUrl: "../Images/warriorstick.webp",
+        weight: "0.90 LBS",
+        category: "Sports Equipment",
+        stock: 16,
+        caseSize: 10,
+        price: "$279.99",
+      },
+      {
+        id: "10144",
+        title: "Bauer Nexus 2N Pro Skate",
+        sku: "60144",
+        imageUrl: "../Images/2nskate.jpg",
+        weight: "4.20 LBS",
+        category: "Sports Equipment",
+        stock: 14,
+        caseSize: 10,
+        price: "$599.99",
+      },
+      {
+        id: "10145",
+        title: "Warrior Alpha One Pro Hockey Gloves",
+        sku: "60145",
+        imageUrl: "../Images/warriorglove.jpg",
+        weight: "1.30 LBS",
+        category: "Sports Equipment",
+        stock: 18,
+        caseSize: 12,
+        price: "$179.99",
+      },
+      {
+        id: "10146",
+        title: "True AX9 Hockey Skates",
+        sku: "60146",
+        imageUrl: "../Images/trueskate.jpg",
+        weight: "4.30 LBS",
+        category: "Sports Equipment",
+        stock: 9,
+        caseSize: 8,
+        price: "$799.99",
+      },
+      {
+        id: "10147",
+        title: "CCM Ribcor Reckoner Stick",
+        sku: "60147",
+        imageUrl: "../Images/ribcorstick.jpg",
+        weight: "1.10 LBS",
+        category: "Sports Equipment",
+        stock: 22,
+        caseSize: 10,
+        price: "$249.99",
+      },
+      {
+        id: "10148",
+        title: "Bauer Vapor X2.7 Elbow Pads",
+        sku: "60148",
+        imageUrl: "../Images/elbowpad.jpg",
+        weight: "1.20 LBS",
+        category: "Sports Equipment",
+        stock: 14,
+        caseSize: 10,
+        price: "$79.99",
+      },
+      {
+        id: "10149",
+        title: "True XCore 5.2 Hockey Stick",
+        sku: "60149",
+        imageUrl: "../Images/true.jpg",
+        weight: "0.95 LBS",
+        category: "Sports Equipment",
+        stock: 13,
+        caseSize: 10,
+        price: "$249.99",
+      },
+      {
+        id: "10150",
+        title: "Bauer Nexus 2N Pro Elbow Pads",
+        sku: "60150",
+        imageUrl: "../Images/elbowpad.jpg",
+        weight: "1.60 LBS",
+        category: "Sports Equipment",
+        stock: 10,
+        caseSize: 10,
+        price: "$119.99",
+      },
+
+      // Add more product objects as needed
+    ];
+
+    // Function to populate the product grid
+    function populateProductGrid() {
+      const productGrid = document.querySelector(".product-grid");
+      productGrid.innerHTML = ""; // Clear existing content
+
+      products.forEach((product) => {
+        const productCard = document.createElement("div");
+        productCard.classList.add("product-card");
+
+        productCard.innerHTML = `
+      <div class="product-id">${product.id}</div>
+      <div class="product-title">${product.title}</div>
+      <div class="product-details">
+        <span>SKU#: ${product.sku}</span>
+      </div>
+      <img src="${product.imageUrl}" class="product-image" alt="${product.title}" />
+      <div class="location-tag">Weight: ${product.weight}</div>
+      <div class="location-tag">Category: ${product.category}</div>
+      <div class="stock-info">In Stock: ${product.stock}</div>
+      <div class="stock-info">Case Size: ${product.caseSize}</div>
+      <div class="price">${product.price}</div>
+      <div class="action-buttons">
+        <button class="button">Delete</button>
+      </div>
+    `;
+
+        productGrid.appendChild(productCard);
+      });
+    }
+
+    // Call the function to populate the grid
+    populateProductGrid();
+  </script>
 </html>

@@ -43,7 +43,7 @@ h1 {
 }
 
 .employees-table th {
-    background-color: #b00000; /* Dark red header background */
+    background-color: #b22222; /* Dark red header background */
     color: #ffffff; /* White text for header */
     font-weight: bold;
 }
@@ -51,7 +51,7 @@ h1 {
 .action-button,
 .add-button,
 .assign-button {
-    display: inline-block; /* Add this */
+    display: block;
     padding: 8px 12px;
     border-radius: 4px;
     width: 125px;
@@ -61,22 +61,48 @@ h1 {
     text-decoration: none; /* Add this */
 }
 
-.add-button {
-    background-color: #b00000;
-    color: white;
-    border: none;
-    margin-bottom: 10px;
-    margin-left: 45%;
-    display: block; /* Add this if you want it centered as a standalone button */
+
+
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background-color: #f4f4f4;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    margin-bottom: 20px;
+    width: 100%; /* Ensure header takes full width */
 }
 
-/* Style for anchor tags specifically */
-a.action-button,
-a.add-button,
-a.assign-button {
-    text-decoration: none;
-    color: inherit;
+.header h1 {
+    font-size: 24px;
+    color: #333;
+    margin: 0;
 }
+
+.header a {
+    padding: 10px 15px;
+    border-radius: 5px;
+    background-color: #b22222;
+    color: white;
+    text-decoration: none;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+    margin: 0 5px;
+}
+
+.header a:hover {
+    background-color: #900000;
+    transform: scale(1.05);
+}
+
+.header a:active {
+    transform: scale(0.98);
+}
+
+
+
 
 .add-button:hover {
     background-color: #900000; /* Slightly darker red on hover */
@@ -89,7 +115,7 @@ a.assign-button {
 }
 
 .action-button.delete {
-    background-color: #ff4d4d; /* Red for delete button */
+    background-color: #b22222; /* Red for delete button */
     color: white;
     border: none;
 }

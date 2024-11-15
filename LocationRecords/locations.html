@@ -1,341 +1,336 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bullseye Sporting Goods - Location Management</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 20px;
-            background-color: #f5f5f5;
-        }
+      body {
+        font-family: Arial, sans-serif;
+        margin: 0;
+        padding: 20px;
+        background-color: #f5f5f5;
+      }
 
-        .container {
-            max-width: 1200px;
-            margin: 0 auto;
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 0 10px rgba(0,0,0,0.1);
-        }
+      .container {
+        max-width: 1200px;
+        margin: 0 auto;
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+      }
 
-        .header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 20px;
-        }
+      .header {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        margin-bottom: 20px;
+        background-color: #f5f5f5;
+        border-radius: 4px;
+        padding: 20px;
+      }
 
-        h1 {
-            color: #b00000;
-            margin: 0;
-        }
+      h1 {
+        color: #b22222;
+        margin: 0;
+      }
 
-        .add-button {
-            background-color: #b00000;
-            color: white;
-            border: none;
-            padding: 10px 20px;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+      .add-button {
+        background-color: #b22222;
+        color: white;
+        border: none;
+        padding: 10px 20px;
+        border-radius: 4px;
+        cursor: pointer;
+        text-decoration: none;
+      }
 
-        .search-bar {
-            margin-bottom: 20px;
-        }
+      .search-bar input {
+        width: 300px;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+      }
 
-        .search-bar input {
-            width: 300px;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-        }
+      table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 20px;
+        font-size: 14px;
+      }
 
-        table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 20px;
-            font-size: 14px;
-        }
+      th,
+      td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #ddd;
+      }
 
-        th, td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #ddd;
-        }
+      th {
+        background-color: #f8f8f8;
+        color: #333;
+      }
 
-        th {
-            background-color: #f8f8f8;
-            color: #333;
-        }
+      tr:hover {
+        background-color: #f5f5f5;
+      }
 
-        tr:hover {
-            background-color: #f5f5f5;
-        }
+      .action-buttons {
+        display: flex;
+        gap: 10px;
+      }
 
-        .action-buttons {
-            display: flex;
-            gap: 10px;
-        }
+      .edit-button,
+      .delete-button {
+        padding: 6px 12px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+      }
 
-        .edit-button, .delete-button {
-            padding: 6px 12px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-        }
+      .edit-button {
+        background-color: #4caf50;
+        color: white;
+      }
 
-        .edit-button {
-            background-color: #4CAF50;
-            color: white;
-        }
+      .delete-button {
+        background-color: #f44336;
+        color: white;
+      }
 
-        .delete-button {
-            background-color: #f44336;
-            color: white;
-        }
+      .pagination {
+        display: flex;
+        justify-content: center;
+        margin-top: 20px;
+        gap: 10px;
+      }
 
-        .pagination {
-            display: flex;
-            justify-content: center;
-            margin-top: 20px;
-            gap: 10px;
-        }
+      .page-button {
+        padding: 8px 12px;
+        border: 1px solid #ddd;
+        background: white;
+        cursor: pointer;
+      }
 
-        .page-button {
-            padding: 8px 12px;
-            border: 1px solid #ddd;
-            background: white;
-            cursor: pointer;
-        }
-
-        .page-button.active {
-            background: #b00000;
-            color: white;
-            border-color: #b00000;
-        }
+      .page-button.active {
+        background: #b00000;
+        color: white;
+        border-color: #b00000;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="container">
-        <div class="header">
-            <h1>Location Management</h1>
-            <a href="locationforms.html" class="add-button">Add/Edit Location</a>
-            <a href="../PermissionsWireframes/AdminDashboard.html" class="add-button">Admin Dashboard</a>
-            <a href="../Dashboard/dashboard.html" class="add-button">Dashboard</a>
-        </div>
-
+      <div class="header">
+        <h1>Location Management</h1>
         <div class="search-bar">
-            <input type="text" placeholder="Search locations...">
+          <input type="text" placeholder="Search locations..." />
         </div>
+        <a href="locationforms.html" class="add-button">Add/Edit Location</a>
+        <a
+          href="../PermissionsWireframes/AdminDashboard.html"
+          class="add-button"
+          >Admin Dashboard</a
+        >
+        <a href="../Dashboard/dashboard.html" class="add-button">Dashboard</a>
+      </div>
 
-        <table>
-            <thead>
-                <tr>
-                    <th>Location ID</th>
-                    <th>Name</th>
-                    <th>Address</th>
-                    <th>Address 2</th>
-                    <th>City</th>
-                    <th>Province</th>
-                    <th>Postal Code</th>
-                    <th>Phone</th>
-                    <th>Day of Week</th>
-                    <th>Distance</th>
-                    <th>Actions</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1</td>
-                    <td>Truck</td>
-                    <td>1063 Bayside Drive</td>
-                    <td>-</td>
-                    <td>Saint John</td>
-                    <td>NB</td>
-                    <td>E2J4Y2</td>
-                    <td>506-696-6236</td>
-                    <td>Sunday</td>
-                    <td>0 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>2</td>
-                    <td>Warehouse</td>
-                    <td>438 Grandview Avenue</td>
-                    <td>-</td>
-                    <td>Saint John</td>
-                    <td>NB</td>
-                    <td>E2J4M9</td>
-                    <td>506-696-6228</td>
-                    <td>Saturday</td>
-                    <td>0 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>3</td>
-                    <td>Bullseye Corporate Headquarters</td>
-                    <td>950 Grandview Avenue</td>
-                    <td>-</td>
-                    <td>Saint John</td>
-                    <td>NB</td>
-                    <td>E2L3V1</td>
-                    <td>506-696-6666</td>
-                    <td>Saturday</td>
-                    <td>0 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>4</td>
-                    <td>Saint John Retail</td>
-                    <td>519 Westmorland Road</td>
-                    <td>-</td>
-                    <td>Saint John</td>
-                    <td>NB</td>
-                    <td>E2J3W9</td>
-                    <td>506-696-6229</td>
-                    <td>Monday</td>
-                    <td>5 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>5</td>
-                    <td>Sussex Retail</td>
-                    <td>565 Main Street</td>
-                    <td>-</td>
-                    <td>Sussex</td>
-                    <td>NB</td>
-                    <td>E4E7H4</td>
-                    <td>506-696-6230</td>
-                    <td>Friday</td>
-                    <td>74 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>6</td>
-                    <td>Moncton Retail</td>
-                    <td>1380 Mountain Road</td>
-                    <td>Unit 46</td>
-                    <td>Moncton</td>
-                    <td>NB</td>
-                    <td>E1C2T8</td>
-                    <td>506-696-6231</td>
-                    <td>Tuesday</td>
-                    <td>150 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>7</td>
-                    <td>Dieppe Retail</td>
-                    <td>477 Paul Street</td>
-                    <td>-</td>
-                    <td>Dieppe</td>
-                    <td>NB</td>
-                    <td>E1A4X5</td>
-                    <td>506-696-6232</td>
-                    <td>Tuesday</td>
-                    <td>157 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>8</td>
-                    <td>Oromocto Retail</td>
-                    <td>273 Restigouche Road</td>
-                    <td>-</td>
-                    <td>Oromocto</td>
-                    <td>NB</td>
-                    <td>E2V2H1</td>
-                    <td>506-696-6233</td>
-                    <td>Wednesday</td>
-                    <td>96 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>9</td>
-                    <td>Fredericton Retail</td>
-                    <td>1381 Regent Street</td>
-                    <td>Unit Y200A</td>
-                    <td>Fredericton</td>
-                    <td>NB</td>
-                    <td>E3C1A2</td>
-                    <td>506-696-6234</td>
-                    <td>Wednesday</td>
-                    <td>116 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-                <tr>
-                    <td>10</td>
-                    <td>Miramichi Retail</td>
-                    <td>2441 King George Highway</td>
-                    <td>-</td>
-                    <td>Miramichi</td>
-                    <td>NB</td>
-                    <td>E1V6W2</td>
-                    <td>506-696-6235</td>
-                    <td>Thursday</td>
-                    <td>270 km</td>
-                    <td>
-                        <div class="action-buttons">
-                            
-                            <button class="delete-button">Delete</button>
-                        </div>
-                    </td>
-                </tr>
-            </tbody>
-        </table>
+      <table>
+        <thead>
+          <tr>
+            <th>Location ID</th>
+            <th>Name</th>
+            <th>Address</th>
+            <th>Address 2</th>
+            <th>City</th>
+            <th>Province</th>
+            <th>Postal Code</th>
+            <th>Phone</th>
+            <th>Day of Week</th>
+            <th>Distance</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>1</td>
+            <td>Truck</td>
+            <td>1063 Bayside Drive</td>
+            <td>-</td>
+            <td>Saint John</td>
+            <td>NB</td>
+            <td>E2J4Y2</td>
+            <td>506-696-6236</td>
+            <td>Sunday</td>
+            <td>0 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>2</td>
+            <td>Warehouse</td>
+            <td>438 Grandview Avenue</td>
+            <td>-</td>
+            <td>Saint John</td>
+            <td>NB</td>
+            <td>E2J4M9</td>
+            <td>506-696-6228</td>
+            <td>Saturday</td>
+            <td>0 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>3</td>
+            <td>Bullseye Corporate Headquarters</td>
+            <td>950 Grandview Avenue</td>
+            <td>-</td>
+            <td>Saint John</td>
+            <td>NB</td>
+            <td>E2L3V1</td>
+            <td>506-696-6666</td>
+            <td>Saturday</td>
+            <td>0 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>4</td>
+            <td>Saint John Retail</td>
+            <td>519 Westmorland Road</td>
+            <td>-</td>
+            <td>Saint John</td>
+            <td>NB</td>
+            <td>E2J3W9</td>
+            <td>506-696-6229</td>
+            <td>Monday</td>
+            <td>5 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>5</td>
+            <td>Sussex Retail</td>
+            <td>565 Main Street</td>
+            <td>-</td>
+            <td>Sussex</td>
+            <td>NB</td>
+            <td>E4E7H4</td>
+            <td>506-696-6230</td>
+            <td>Friday</td>
+            <td>74 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>6</td>
+            <td>Moncton Retail</td>
+            <td>1380 Mountain Road</td>
+            <td>Unit 46</td>
+            <td>Moncton</td>
+            <td>NB</td>
+            <td>E1C2T8</td>
+            <td>506-696-6231</td>
+            <td>Tuesday</td>
+            <td>150 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>7</td>
+            <td>Dieppe Retail</td>
+            <td>477 Paul Street</td>
+            <td>-</td>
+            <td>Dieppe</td>
+            <td>NB</td>
+            <td>E1A4X5</td>
+            <td>506-696-6232</td>
+            <td>Tuesday</td>
+            <td>157 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>8</td>
+            <td>Oromocto Retail</td>
+            <td>273 Restigouche Road</td>
+            <td>-</td>
+            <td>Oromocto</td>
+            <td>NB</td>
+            <td>E2V2H1</td>
+            <td>506-696-6233</td>
+            <td>Wednesday</td>
+            <td>96 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>9</td>
+            <td>Fredericton Retail</td>
+            <td>1381 Regent Street</td>
+            <td>Unit Y200A</td>
+            <td>Fredericton</td>
+            <td>NB</td>
+            <td>E3C1A2</td>
+            <td>506-696-6234</td>
+            <td>Wednesday</td>
+            <td>116 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+          <tr>
+            <td>10</td>
+            <td>Miramichi Retail</td>
+            <td>2441 King George Highway</td>
+            <td>-</td>
+            <td>Miramichi</td>
+            <td>NB</td>
+            <td>E1V6W2</td>
+            <td>506-696-6235</td>
+            <td>Thursday</td>
+            <td>270 km</td>
+            <td>
+              <div class="action-buttons">
+                <button class="delete-button">Delete</button>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
 
-        <div class="pagination">
-            <button class="page-button">Previous</button>
-            <button class="page-button active">1</button>
-            <button class="page-button">Next</button>
-        </div>
+      <div class="pagination">
+        <button class="page-button">Previous</button>
+        <button class="page-button active">1</button>
+        <button class="page-button">Next</button>
+      </div>
     </div>
-</body>
+  </body>
 </html>
