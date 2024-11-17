@@ -43,7 +43,7 @@
         </select>
     </header>
 
-    <h1>Loss Management</h1>
+    <h1>Process Loss</h1>
 
     <div class="search-container">
         <input type="text" class="search-input" placeholder="Scan Barcode, Search by Description or Enter SKU/Item ID">
@@ -61,33 +61,7 @@
             <span>SKU#: 60013</span>
         </div>
         <img src="../Images/1xlite.webp" class="product-image" alt="Paint">
-        <div class="stock-info">
-            Weight: <input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" />
-          </div>
-        <div class="stock-info">
-            Category:
-            <select>
-                <option>
-                    Sports Equipment
-                </option>
-                <option>
-                    Camping
-                </option>
-                <option>
-                    Footwear
-                </option>
-            </select>
-          </div>
-        <div class="stock-info">
-            In Stock: <input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" />
-          </div>
-          
-          <div class="stock-info">
-            Case Size: <input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" />
-          </div>
-          <div class="stock-info">
-            Price: <input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" />
-          </div>
+        
           <div class="stock-info">
             Loss Type:
             <select>
@@ -100,10 +74,22 @@
                 <option>
                     Damaged Item
                 </option>
+                <option>
+                    Return to Vendor
+                </option>
             </select>
           </div>
+          <div class="stock-info">
+            Quantity: <input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" />
+          </div>
+          <div class="stock-info">
+            <p>Comments / Reasoning:</p>
+          </div>
+          <div class="stock-info">
+            <textarea id="notes" rows="4" cols="50"></textarea>
+          </div>
         <div class="action-buttons">
-            <button class="button">Delete</button>
+            
             <a href="ViewLosses.html" class="button">Submit Loss</a>
         </div>
     </div>

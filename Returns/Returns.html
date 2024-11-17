@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Bullseye Sporting Goods - View Backorder</title>
+    <title>Bullseye Sporting Goods - Returns</title>
     <style>
       * {
         margin: 0;
@@ -198,6 +198,14 @@
         color: white;
       }
 
+      .button-p {
+        color:#eee;
+        background-color:#b00000;
+        border:1px solid black;
+        border-radius:5px;
+        padding:10px;
+      }
+
       .btn-secondary {
         background: #666;
         color: white;
@@ -259,17 +267,17 @@
   <body>
     <div class="sidebar">
       <div class="sidebar-header">
-        <h1>Bullseye Sporting Goods - View Losses</h1>
+        <h1>Bullseye Sporting Goods - Returns</h1>
       </div>
       <nav class="nav-menu">
-        <a href="InventoryDashboard.html" class="nav-item">Inventory Dashboard</a>
+        
         <a href="../Dashboard/dashboard.html" class="nav-item">Dashboard</a>
     </nav>
     </div>
 
     <div class="main-content">
       <div class="dashboard-header">
-        <h2>View Losses</h2>
+        <h2>Returns</h2>
       </div>
 
       
@@ -281,148 +289,102 @@
           <input
             type="text"
             class="search-input"
-            placeholder="Search losses by loss ID, item name / id, sku #, location, loss type, amount, quantity, date range"
+            placeholder="Search by receipt #, item ID or SKU #"
           />
           <button class="action-btn btn-primary">Search</button>
         </div>
 
-        <div class="filters">
-          <select class="filter-select">
-            <option>Loss Type: All</option>
-            <option>Write Off (Store Expense)</option>
-            <option>Store Display</option>
-            <option>Damaged Item</option>
-            <option>Return to Vendor</option>
-          </select>
-          <select class="filter-select">
-            <option>Amount : $</option>
-            <option>Highest</option>
-            <option>Lowest</option>
-          </select>
-          <select class="filter-select">
-            <option>Quantity:</option>
-            <option>Highest</option>
-            <option>Lowest</option>
-            
-          </select>
-          <select class="filter-select">
-            <option>Location: All</option>
-            <option value="Saint John Retail">Saint John Retail</option>
-            <option value="Sussex Retail">Sussex Retail</option>
-            <option value="Moncton Retail">Moncton Retail</option>
-            <option value="Dieppe Retail">Dieppe Retail</option>
-            <option value="Oromocto Retail">Oromocto Retail</option>
-            <option value="Fredericton Retail">Fredericton Retail</option>
-            <option value="Miramichi Retail">Miramichi Retail</option>
-            <option value="Warehouse">Warehouse</option>
-          </select>
-          <select class="filter-select">
-            <option>Date Range: All</option>
-            <option>Today</option>
-            <option>Last 7 Days</option>
-            <option>This Month</option>
-          </select>
-        </div>
+
+        <div class="card">
+            <div class="search-bar">
+              <input
+                type="text"
+                class="search-input"
+                placeholder="Scan item to add to return"
+              />
+             
+            </div>
+        
 
         <div class="table-container">
           <table>
             <thead>
               <tr>
-                <th>Loss ID</th>
                 <th>Item (Name)</th>
                 <th>Item ID</th>
                 <th>SKU #</th>
-                <th>Location</th>
-                <th>Loss Type</th>
                 <th>Quantity</th>
                 <th>Date</th>
-                <th>Amount $</th>
+                <th>Amount ($)</th>
+                <th>Actions</th>
               </tr>
             </thead>
             <tbody>
               <tr>
-                <td>#LOSS-01</td>
                 <td>Vapor 1X Lite Griptac Senior Hockey Stick</td>
                 <td>10013</td>
                 <td>60013</td>
-                <td>Saint John - Retail</td>
-                <td>Damaged Item</td>
-                <td>10</td>
+                <td><input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" /></td>
                 <td>2024-11-10</td>
                 <td>$999.99</td>
+                <td>
+                    <button class="action-btn btn-secondary">Remove</button>
+                </td>
               </tr>
               <tr>
-                <td>#LOSS-02</td>
                 <td>Jetspeed FT1 Senior Ice Hockey Skates</td>
                 <td>10000</td>
                 <td>60000</td>
-                <td>Sussex - Retail</td>
-                <td>Return to Vendor</td>
-                <td>2</td>
+                <td><input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" /></td>
                 <td>2024-11-11</td>
                 <td>$999.99</td>
+                <td>
+                  <button class="action-btn btn-secondary">Remove</button>
+                </td>
               </tr>
               <tr>
-                <td>#LOSS-04</td>
                 <td>Re-Akt 200 Hockey Helmet Combo</td>
                 <td>10025</td>
                 <td>60025</td>
-                <td>Fredericton - Retail</td>
-                <td>Damaged Item</td>
-                <td>3</td>
-                <td>2024-11-13</td>
+                <td><input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" /></td>
+                <td>2024-11-12</td>
                 <td>$399.99</td>
+                <td>
+                  <button class="action-btn btn-secondary">Remove</button>
+                </td>
               </tr>
               <tr>
-                <td>#LOSS-05</td>
                 <td>Nexus 2N Senior Hockey Gloves</td>
                 <td>10037</td>
                 <td>60037</td>
-                <td>Oromocto - Retail</td>
-                <td>Store Display</td>
-                <td>4</td>
-                <td>2024-11-14</td>
+                <td><input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" /></td>
+                <td>2024-11-13</td>
                 <td>$299.99</td>
+                <td>
+                  <button class="action-btn btn-secondary">Remove</button>
+                </td>
               </tr>
               <tr>
-                <td>#LOSS-06</td>
                 <td>Vapor X800 Lite Senior Hockey Gloves</td>
                 <td>10049</td>
                 <td>60049</td>
-                <td>Dieppe - Retail</td>
-                <td>Damaged Item</td>
-                <td>6</td>
-                <td>2024-11-15</td>
+                <td><input type="number" id="quantitySelect" min="1" max="100" step="1" value="1" /></td>
+                <td>2024-11-14</td>
                 <td>$119.99</td>
+                <td>
+                  <button class="action-btn btn-secondary">Remove</button>
+                </td>
               </tr>
-              <tr>
-                <td>#LOSS-07</td>
-                <td>Tacks 7092 Senior Hockey Pants</td>
-                <td>10061</td>
-                <td>60061</td>
-                <td>Moncton - Retail</td>
-                <td>Return to Vendor</td>
-                <td>8</td>
-                <td>2024-11-16</td>
-                <td>$169.99</td>
-              </tr>
-              <tr>
-                <td>#LOSS-08</td>
-                <td>Vapor APX2 Senior Hockey Pants</td>
-                <td>10073</td>
-                <td>60073</td>
-                <td>Saint John - Retail</td>
-                <td>Write Off (Store Expense)</td>
-                <td>1</td>
-                <td>2024-11-17</td>
-                <td>$199.99</td>
-              </tr>
+              
               
              
             </tbody>
           </table>
+          
         </div>
+        
       </div>
+      <button class="button-p">Process Return</button>
     </div>
   </body>
 </html>
