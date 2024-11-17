@@ -1,437 +1,446 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Bullseye Sporting Goods - Permissions Management</title>
     <style>
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
+      body {
+        font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+          Oxygen, Ubuntu, Cantarell, sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f5f5f5;
+      }
 
-        .sidebar {
-            width: 250px;
-            position: fixed;
-            height: 100%;
-            background-color: #b22222;
-            color: white;
-            padding: 20px;
-            box-sizing: border-box;
-        }
+      .sidebar {
+        width: 250px;
+        position: fixed;
+        height: 100%;
+        background-color: #b22222;
+        color: white;
+        padding: 20px;
+        box-sizing: border-box;
+      }
 
-        .main-content {
-            margin-left: 250px;
-            padding: 20px;
-        }
+      .main-content {
+        margin-left: 250px;
+        padding: 20px;
+      }
 
-        .sidebar h2 {
-            margin-bottom: 20px;
-            padding-bottom: 10px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.2);
-        }
+      .sidebar h2 {
+        margin-bottom: 20px;
+        padding-bottom: 10px;
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
 
-        .sidebar-menu {
-            list-style: none;
-            padding: 0;
-            margin: 0;
-        }
+      .sidebar-menu {
+        list-style: none;
+        padding: 0;
+        margin: 0;
+      }
 
-        .sidebar-menu li {
-            margin-bottom: 10px;
-        }
+      .sidebar-menu li {
+        margin-bottom: 10px;
+      }
 
-        .sidebar-menu a {
-            color: white;
-            text-decoration: none;
-            display: block;
-            padding: 10px;
-            border-radius: 4px;
-            transition: background-color 0.2s;
-        }
+      .sidebar-menu a {
+        color: white;
+        text-decoration: none;
+        display: block;
+        padding: 10px;
+        border-radius: 4px;
+        transition: background-color 0.2s;
+      }
 
-        .sidebar-menu a:hover {
-            background-color: rgba(255, 255, 255, 0.1);
-        }
+      .sidebar-menu a:hover {
+        background-color: rgba(255, 255, 255, 0.1);
+      }
 
-        .section-card {
-            background: white;
-            padding: 20px;
-            border-radius: 8px;
-            box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-            margin-bottom: 20px;
-        }
+      .section-card {
+        background: white;
+        padding: 20px;
+        border-radius: 8px;
+        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+        margin-bottom: 20px;
+      }
 
-        .section-card h3 {
-            margin-top: 0;
-            color: #b22222;
-            border-bottom: 1px solid #eee;
-            padding-bottom: 10px;
-        }
+      .section-card h3 {
+        margin-top: 0;
+        color: #b22222;
+        border-bottom: 1px solid #eee;
+        padding-bottom: 10px;
+      }
 
-        .permission-table {
-            width: 100%;
-            border-collapse: collapse;
-            margin-top: 15px;
-        }
+      .permission-table {
+        width: 100%;
+        border-collapse: collapse;
+        margin-top: 15px;
+      }
 
-        .permission-table th,
-        .permission-table td {
-            padding: 12px;
-            text-align: left;
-            border-bottom: 1px solid #eee;
-        }
+      .permission-table th,
+      .permission-table td {
+        padding: 12px;
+        text-align: left;
+        border-bottom: 1px solid #eee;
+      }
 
-        .permission-table th {
-            background-color: #b22222;
-            color: white;
-        }
+      .permission-table th {
+        background-color: #b22222;
+        color: white;
+      }
 
-        .permission-table tr:hover {
-            background-color: #f8f9fa;
-        }
+      .permission-table tr:hover {
+        background-color: #f8f9fa;
+      }
 
-        .form-group {
-            margin-bottom: 15px;
-        }
+      .form-group {
+        margin-bottom: 15px;
+      }
 
-        .form-group label {
-            display: block;
-            margin-bottom: 5px;
-            color: #333;
-            font-weight: 500;
-        }
+      .form-group label {
+        display: block;
+        margin-bottom: 5px;
+        color: #333;
+        font-weight: 500;
+      }
 
-        .form-control {
-            width: 100%;
-            padding: 8px;
-            border: 1px solid #ddd;
-            border-radius: 4px;
-            box-sizing: border-box;
-        }
+      .form-control {
+        width: 100%;
+        padding: 8px;
+        border: 1px solid #ddd;
+        border-radius: 4px;
+        box-sizing: border-box;
+      }
 
-        .btn {
-            padding: 8px 16px;
-            border: none;
-            border-radius: 4px;
-            cursor: pointer;
-            font-weight: 500;
-            transition: background-color 0.2s;
-        }
+      .btn {
+        padding: 8px 16px;
+        border: none;
+        border-radius: 4px;
+        cursor: pointer;
+        font-weight: 500;
+        transition: background-color 0.2s;
+      }
 
-        .btn-primary {
-            background-color: #b22222;
-            color: white;
-        }
+      .btn-primary {
+        background-color: #b22222;
+        color: white;
+      }
 
-        .btn-danger {
-            background-color: #dc3545;
-            color: white;
-        }
+      .btn-danger {
+        background-color: #dc3545;
+        color: white;
+      }
 
-        .btn-warning {
-            background-color: #ffc107;
-            color: #000;
-        }
+      .btn-warning {
+        background-color: #ffc107;
+        color: #000;
+      }
 
-        .btn:hover {
-            opacity: 0.9;
-        }
+      .btn:hover {
+        opacity: 0.9;
+      }
 
-        .action-buttons {
-            display: flex;
-            gap: 8px;
-        }
+      .action-buttons {
+        display: flex;
+        gap: 8px;
+      }
 
-        footer {
-            margin-left: 250px;
-            padding: 20px;
-            text-align: center;
-            color: #666;
-            border-top: 1px solid #dee2e6;
-        }
+      footer {
+        margin-left: 250px;
+        padding: 20px;
+        text-align: center;
+        color: #666;
+        border-top: 1px solid #dee2e6;
+      }
     </style>
-</head>
-<body>
+  </head>
+  <body>
     <div class="sidebar">
-        <h2>Permission Management</h2>
-        <ul class="sidebar-menu">
-            <li><a href="../PermissionsWireframes/AdminDashboard.html">Admin Dashboard</a></li>
-            <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
-        </ul>
+      <h2>Permission Management</h2>
+      <ul class="sidebar-menu">
+        <li>
+          <a href="../PermissionsWireframes/AdminDashboard.html"
+            >Admin Dashboard</a
+          >
+        </li>
+        <li><a href="../Dashboard/dashboard.html">Dashboard</a></li>
+        <li><a href="AddEditRole.html">Add/Edit Role</a></li>
+        <li><a href="AddEditPermission.html">Add/Edit Permission</a></li>
+      </ul>
     </div>
 
     <div class="main-content">
-        <div class="section-card">
-            <h3>Roles</h3>
-            <table class="permission-table">
-                <thead>
-                    <tr>
-                        <th>Role Name</th>
-                        <th>Description</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>Admin</td>
-                        <td>Full system access</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Management</td>
-                        <td>Store/Warehouse/Headquarters management access</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Store Manager</td>
-                        <td>Store management access</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Finance Manager</td>
-                        <td>Finance management access</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Warehouse Worker</td>
-                        <td>Basic acccess to warehouse operations</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                </tbody>
-            </table>
-            <button class="btn btn-primary" style="margin-top: 15px;">Add Role</button>
-        </div>
+      <div class="section-card">
+        <h3>Roles</h3>
+        <table class="permission-table">
+          <thead>
+            <tr>
+              <th>Role Name</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>Admin</td>
+              <td>Full system access</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Management</td>
+              <td>Store/Warehouse/Headquarters management access</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Store Manager</td>
+              <td>Store management access</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Finance Manager</td>
+              <td>Finance management access</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Warehouse Worker</td>
+              <td>Basic acccess to warehouse operations</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-primary" style="margin-top: 15px">
+          Add Role
+        </button>
+      </div>
 
-        <div class="section-card">
-            <h3>Permissions</h3>
-            <table class="permission-table">
-                <thead>
-                    <tr>
-                        <th>Permission Name</th>
-                        <th>Description</th>
-                        <th>Actions</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>View Inventory</td>
-                        <td>Can view inventory levels</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edit Inventory</td>
-                        <td>Can edit inventory details</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>View Reports</td>
-                        <td>Can view reports</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edit Reports</td>
-                        <td>Can edit report data</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Create Store Order</td>
-                        <td>Can create new store orders</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edit Store Order</td>
-                        <td>Can edit existing store orders</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Create Emergency Order</td>
-                        <td>Can create emergency orders</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edit Emergency Order</td>
-                        <td>Can edit emergency orders</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Create Supplier Order</td>
-                        <td>Can create supplier orders</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edit Supplier Order</td>
-                        <td>Can edit supplier orders</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Manage Users</td>
-                        <td>Can manage user accounts</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Manage System Permissions</td>
-                        <td>Can manage system-level permissions</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>View Records</td>
-                        <td>Can view historical records</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    <tr>
-                        <td>Edit Records</td>
-                        <td>Can edit existing records</td>
-                        <td class="action-buttons">
-                            <button class="btn btn-warning">Edit</button>
-                            <button class="btn btn-danger">Delete</button>
-                        </td>
-                    </tr>
-                    
-                </tbody>
-            </table>
-            <button class="btn btn-primary" style="margin-top: 15px;">Add Permission</button>
-        </div>
+      <div class="section-card">
+        <h3>Permissions</h3>
+        <table class="permission-table">
+          <thead>
+            <tr>
+              <th>Permission Name</th>
+              <th>Description</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td>View Inventory</td>
+              <td>Can view inventory levels</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Edit Inventory</td>
+              <td>Can edit inventory details</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>View Reports</td>
+              <td>Can view reports</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Edit Reports</td>
+              <td>Can edit report data</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Create Store Order</td>
+              <td>Can create new store orders</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Edit Store Order</td>
+              <td>Can edit existing store orders</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Create Emergency Order</td>
+              <td>Can create emergency orders</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Edit Emergency Order</td>
+              <td>Can edit emergency orders</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Create Supplier Order</td>
+              <td>Can create supplier orders</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Edit Supplier Order</td>
+              <td>Can edit supplier orders</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Manage Users</td>
+              <td>Can manage user accounts</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Manage System Permissions</td>
+              <td>Can manage system-level permissions</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>View Records</td>
+              <td>Can view historical records</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+            <tr>
+              <td>Edit Records</td>
+              <td>Can edit existing records</td>
+              <td class="action-buttons">
+                <button class="btn btn-warning">Edit</button>
+                <button class="btn btn-danger">Delete</button>
+              </td>
+            </tr>
+          </tbody>
+        </table>
+        <button class="btn btn-primary" style="margin-top: 15px">
+          Add Permission
+        </button>
+      </div>
 
-        <div class="section-card">
-            <h3>Assign Permissions to Roles</h3>
-            <form>
-                <div class="form-group">
-                    <label>Select Permission Role</label>
-                    <select class="form-control">
-                        <option value="">-- Select Permission Role --</option>
-                        <option value="1">Administrator</option>
-                        <option value="2">Management</option>
-                        <option value="3">Store Manager</option>
-                        <option value="4">Warehouse Employee</option>
-                        <option value="5">Financial Manager</option>
-                        <option value="6">Trucking / Delivery</option>
+      <div class="section-card">
+        <h3>Assign Permissions to Roles</h3>
+        <form>
+          <div class="form-group">
+            <label>Select Permission Role</label>
+            <select class="form-control">
+              <option value="">-- Select Permission Role --</option>
+              <option value="1">Administrator</option>
+              <option value="2">Management</option>
+              <option value="3">Store Manager</option>
+              <option value="4">Warehouse Employee</option>
+              <option value="5">Financial Manager</option>
+              <option value="6">Trucking / Delivery</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Assign Permission to Role</label>
+            <select class="form-control">
+              <option value="">-- Select Permission to Assign --</option>
+              <option value="1">View Inventory</option>
+              <option value="2">Edit Inventory</option>
+              <option value="3">View Reports</option>
+              <option value="4">Edit Reports</option>
+              <option value="5">Create Store Order</option>
+              <option value="6">Edit Store Order</option>
+              <option value="7">Create Emergency Order</option>
+              <option value="8">Edit Emergency Order</option>
+              <option value="9">Create Supplier Order</option>
+              <option value="10">Edit Supplier Order</option>
+              <option value="11">Manage Users</option>
+              <option value="12">Manage System Permissions</option>
+              <option value="13">View Records</option>
+              <option value="14">Edit Records</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Assign Permissions
+          </button>
+        </form>
+      </div>
 
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Assign Permission to Role</label>
-                    <select class="form-control">
-                        <option value="">-- Select Permission to Assign --</option>
-                        <option value="1">View Inventory</option>
-                        <option value="2">Edit Inventory</option>
-                        <option value="3">View Reports</option>
-                        <option value="4">Edit Reports</option>
-                        <option value="5">Create Store Order</option>
-                        <option value="6">Edit Store Order</option>
-                        <option value="7">Create Emergency Order</option>
-                        <option value="8">Edit Emergency Order</option>
-                        <option value="9">Create Supplier Order</option>
-                        <option value="10">Edit Supplier Order</option>
-                        <option value="11">Manage Users</option>
-                        <option value="12">Manage System Permissions</option>
-                        <option value="13">View Records</option>
-                        <option value="14">Edit Records</option>
-
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Assign Permissions</button>
-            </form>
-        </div>
-
-        <div class="section-card">
-            <h3>Assign Permissions to Employees</h3>
-            <form>
-                <div class="form-group">
-                    <label>Select Employee</label>
-                    <select class="form-control">
-                        <option value="">-- Select an Employee --</option>
-                        <option value="1">Chris Patstone</option>
-                        <option value="2">Eduardo Concepcion</option>
-                        <option value="3">Monica Munoz</option>
-                        <option value="4">Jose Perez</option>
-                        <option value="5">Charles Norris</option>
-                        <option value="6">Kevin Blanche</option>
-                        <option value="7">Willow Bray</option>
-                        <option value="8">Tansy Graupel</option>
-                        <option value="9">Shuncho Yuasa</option>
-                        <option value="10">Emi Byron</option>
-                        <option value="11">Arabella Bean</option>
-                        <option value="12">Hattie Trent</option>
-                        <option value="13">Berniece Callan</option>
-                    </select>
-                </div>
-                <div class="form-group">
-                    <label>Select Permission Level</label>
-                    <select class="form-control">
-                        <option value="">-- Select Permission Level --</option>
-                        <option value="1">Administrator</option>
-                        <option value="2">Management</option>
-                        <option value="3">Store Manager</option>
-                        <option value="4">Warehouse Employee</option>
-                        <option value="5">Financial Manager</option>
-                        <option value="6">Trucking / Delivery</option>
-
-                    </select>
-                </div>
-                <button type="submit" class="btn btn-primary">Assign Permissions</button>
-            </form>
-        </div>
+      <div class="section-card">
+        <h3>Assign Permissions to Employees</h3>
+        <form>
+          <div class="form-group">
+            <label>Select Employee</label>
+            <select class="form-control">
+              <option value="">-- Select an Employee --</option>
+              <option value="1">Chris Patstone</option>
+              <option value="2">Eduardo Concepcion</option>
+              <option value="3">Monica Munoz</option>
+              <option value="4">Jose Perez</option>
+              <option value="5">Charles Norris</option>
+              <option value="6">Kevin Blanche</option>
+              <option value="7">Willow Bray</option>
+              <option value="8">Tansy Graupel</option>
+              <option value="9">Shuncho Yuasa</option>
+              <option value="10">Emi Byron</option>
+              <option value="11">Arabella Bean</option>
+              <option value="12">Hattie Trent</option>
+              <option value="13">Berniece Callan</option>
+            </select>
+          </div>
+          <div class="form-group">
+            <label>Select Permission Level</label>
+            <select class="form-control">
+              <option value="">-- Select Permission Level --</option>
+              <option value="1">Administrator</option>
+              <option value="2">Management</option>
+              <option value="3">Store Manager</option>
+              <option value="4">Warehouse Employee</option>
+              <option value="5">Financial Manager</option>
+              <option value="6">Trucking / Delivery</option>
+            </select>
+          </div>
+          <button type="submit" class="btn btn-primary">
+            Assign Permissions
+          </button>
+        </form>
+      </div>
     </div>
 
-    <footer>
-        © Bullseye Sporting Goods
-    </footer>
-</body>
+    <footer>© Bullseye Sporting Goods</footer>
+  </body>
 </html>
