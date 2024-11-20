@@ -278,16 +278,22 @@
         <h1>Bullseye Sporting Goods - View Store Orders</h1>
       </div>
       <nav class="nav-menu">
-        <a href="orderManagementPanel.html" class="nav-item">Order Management</a>
-        <a href="createSupplierOrder.html" class="nav-item">Create Supplier Order</a>
+        <a href="orderManagementPanel.html" class="nav-item"
+          >Order Management</a
+        >
+        <a href="createSupplierOrder.html" class="nav-item"
+          >Create Supplier Order</a
+        >
         <a href="store.html" class="nav-item">Create Store Order</a>
         <a href="emergency.html" class="nav-item">Create Emergency Order</a>
         <a href="viewBackorders.html" class="nav-item">View Backorders</a>
-        <a href="store_orders.html" class="nav-item">View Store / Emergency Orders</a>
+        <a href="store_orders.html" class="nav-item"
+          >View Store / Emergency Orders</a
+        >
         <a href="fulfillment.html" class="nav-item">Order Fulfillment</a>
         <a href="shipping.html" class="nav-item">Shipping Receipt</a>
         <a href="../Dashboard/dashboard.html" class="nav-item">Dashboard</a>
-    </nav>
+      </nav>
     </div>
 
     <div class="stats-container">
@@ -355,9 +361,8 @@
                 <th>Order Type</th>
                 <th>Store</th>
                 <th>Date</th>
-                <th>Items</th>
+
                 <th>Total</th>
-                <th>Truck Size</th>
                 <th>Status</th>
                 <th>Actions</th>
               </tr>
@@ -368,343 +373,16 @@
                 <td>Store Order</td>
                 <td>Saint John - Retail</td>
                 <td>2024-11-05</td>
-                <td>
-                  Vapor 1X Lite Griptac Senior Hockey Stick (x10),<br> Re-Akt 200
-                  Hockey Helmet Combo (x10)
-                </td>
+
                 <td>$3,399.90</td>
-                <td>Light</td>
                 <!-- Total price: $339.99 * 10 + $399.99 * 10 -->
                 <td>
                   <span class="status-badge status-pending">Pending</span>
                 </td>
                 <td>
-                  <button class="action-btn btn-primary">Process</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-002</td>
-                <td>Store Order</td>
-                <td>Sussex - Retail</td>
-                <td>2024-11-05</td>
-                <td>Nexus 2N Senior Hockey Gloves (x4),<br> Medium Cutlass (x6)</td>
-                <td>$2,799.94</td>
-                <td>Van</td>
-                <!-- Total price: $299.99 * 4 + $350.00 * 6 -->
-                <td>
-                  <span class="status-badge status-processing">Processing</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Send Delivery</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#EO-003</td>
-                <td>Emergency Order</td>
-                <td>Dieppe - Retail</td>
-                <td>2024-11-05</td>
-                <td>Men's Burton Moto Snowboard Boot (x10)</td>
-                <td>$2,499.90</td>
-                <td>Van</td>
-                <!-- Total price: $249.99 * 10 -->
-                <td>
-                  <span class="status-badge status-processing">Processing</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Send Delivery</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-004</td>
-                <td>Store Order</td>
-                <td>Fredericton - Retail</td>
-                <td>2024-11-06</td>
-                <td>
-                  Vapor 1X Lite Griptac Senior Hockey Stick (x5),<br> Re-Akt 200
-                  Hockey Helmet Combo (x5)
-                </td>
-                <td>$3,699.90</td>
-                <td>Medium</td>
-                <!-- Total price: $339.99 * 5 + $399.99 * 5 -->
-                <td>
-                  <span class="status-badge status-pending">Pending</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Process</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-005</td>
-                <td>Store Order</td>
-                <td>Moncton - Retail</td>
-                <td>2024-11-07</td>
-                <td>Nexus 2N Senior Hockey Gloves (x6), <br>Medium Cutlass (x4)</td>
-                <td>$2,899.94</td>
-                <td>Light</td>
-                <!-- Total price: $299.99 * 6 + $350.00 * 4 -->
-                <td>
-                  <span class="status-badge status-processing">Processing</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Send Delivery</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-006</td>
-                <td>Store Order</td>
-                <td>Saint John - Retail</td>
-                <td>2024-11-08</td>
-                <td>
-                  Men's Burton Moto Snowboard Boot (x5), <br>Vapor 1X Lite Griptac
-                  Senior Hockey Stick (x5)
-                </td>
-                <td>$3,399.90</td>
-                <td>Medium</td>
-                <!-- Total price: $249.99 * 5 + $339.99 * 5 -->
-                <td>
-                  <span class="status-badge status-shipped">In Transit</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Mark Delivered</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#EO-007</td>
-                <td>Emergency Order</td>
-                <td>Dieppe - Retail</td>
-                <td>2024-11-09</td>
-                <td>
-                  Re-Akt 200 Hockey Helmet Combo (x8),<br> Nexus 2N Senior Hockey
-                  Gloves (x2)
-                </td>
-                <td>$2,399.92</td>
-                <td>Van</td>
-                <!-- Total price: $399.99 * 8 + $299.99 * 2 -->
-                <td>
-                  <span class="status-badge status-processing">Processing</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Send Delivery</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-008</td>
-                <td>Store Order</td>
-                <td>Sussex - Retail</td>
-                <td>2024-11-10</td>
-                <td>
-                  Medium Cutlass (x3),<br> Men's Burton Moto Snowboard Boot (x7)
-                </td>
-                <td>$3,299.93</td>
-                <td>Light</td>
-                <!-- Total price: $350.00 * 3 + $249.99 * 7 -->
-                <td>
-                  <span class="status-badge status-pending">Pending</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Process</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-009</td>
-                <td>Store Order</td>
-                <td>Fredericton - Retail</td>
-                <td>2024-11-11</td>
-                <td>
-                  Vapor 1X Lite Griptac Senior Hockey Stick (x3),<br> Re-Akt 200
-                  Hockey Helmet Combo (x2)
-                </td>
-                <td>$2,039.94</td>
-                <td>Van</td>
-                <!-- Total price: $339.99 * 3 + $399.99 * 2 -->
-                <td>
-                  <span class="status-badge status-pending">Pending</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Process</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-010</td>
-                <td>Store Order</td>
-                <td>Moncton - Retail</td>
-                <td>2024-11-12</td>
-                <td>
-                  Men's Burton Moto Snowboard Boot (x4),<br> Nexus 2N Senior Hockey
-                  Gloves (x6)
-                </td>
-                <td>$3,399.92</td>
-                <td>Light</td>
-                <!-- Total price: $249.99 * 4 + $299.99 * 6 -->
-                <td>
-                  <span class="status-badge status-processing">Processing</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Send Delivery</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-011</td>
-                <td>Store Order</td>
-                <td>Saint John - Retail</td>
-                <td>2024-11-13</td>
-                <td>
-                  Re-Akt 200 Hockey Helmet Combo (x5), <br>Medium Cutlass (x5)
-                </td>
-                <td>$3,749.95</td>
-                <td>Van</td>
-                <!-- Total price: $399.99 * 5 + $350.00 * 5 -->
-                <td>
-                  <span class="status-badge status-shipped">In Transit</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Mark Delivered</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-012</td>
-                <td>Store Order</td>
-                <td>Dieppe - Retail</td>
-                <td>2024-11-14</td>
-                <td>
-                  Vapor 1X Lite Griptac Senior Hockey Stick (x2), <br>Men's Burton
-                  Moto Snowboard Boot (x6)
-                </td>
-                <td>$3,459.94</td>
-                <td>Medium</td>
-                <!-- Total price: $339.99 * 2 + $249.99 * 6 -->
-                <td>
-                  <span class="status-badge status-pending">Pending</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Process</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-013</td>
-                <td>Store Order</td>
-                <td>Fredericton - Retail</td>
-                <td>2024-11-15</td>
-                <td>Medium Cutlass (x2),<br> Nexus 2N Senior Hockey Gloves (x8)</td>
-                <td>$2,799.94</td>
-                <td>Light</td>
-                <!-- Total price: $350.00 * 2 + $299.99 * 8 -->
-                <td>
-                  <span class="status-badge status-processing">Processing</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Send Delivery</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-014</td>
-                <td>Store Order</td>
-                <td>Sussex - Retail</td>
-                <td>2024-11-16</td>
-                <td>
-                  Re-Akt 200 Hockey Helmet Combo (x3),<br> Vapor 1X Lite Griptac
-                  Senior Hockey Stick (x7)
-                </td>
-                <td>$4,259.93</td>
-                <td>Medium</td>
-                <!-- Total price: $399.99 * 3 + $339.99 * 7 -->
-                <td>
-                  <span class="status-badge status-shipped">In Transit</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Mark Delivered</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-015</td>
-                <td>Store Order</td>
-                <td>Moncton - Retail</td>
-                <td>2024-11-17</td>
-                <td>
-                  Men's Burton Moto Snowboard Boot (x3),<br> Nexus 2N Senior Hockey
-                  Gloves (x9)
-                </td>
-                <td>$3,349.91</td>
-                <td>Light</td>
-                <!-- Total price: $249.99 * 3 + $299.99 * 9 -->
-                <td>
-                  <span class="status-badge status-pending">Pending</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Process</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-016</td>
-                <td>Store Order</td>
-                <td>Saint John - Retail</td>
-                <td>2024-11-18</td>
-                <td>
-                  Re-Akt 200 Hockey Helmet Combo (x4),<br> Medium Cutlass (x4)
-                </td>
-                <td>$3,099.96</td>
-                <td>Medium</td>
-                <!-- Total price: $399.99 * 4 + $350.00 * 4 -->
-                <td>
-                  <span class="status-badge status-processing">Processing</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Send Delivery</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#SO-017</td>
-                <td>Store Order</td>
-                <td>Dieppe - Retail</td>
-                <td>2024-11-19</td>
-                <td>
-                  Vapor 1X Lite Griptac Senior Hockey Stick (x4),<br> Men's Burton
-                  Moto Snowboard Boot (x4)
-                </td>
-                <td>$3,359.96</td>
-                <td>Van</td>
-                <!-- Total price: $339.99 * 4 + $249.99 * 4 -->
-                <td>
-                  <span class="status-badge status-shipped">In Transit</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Mark Delivered</button>
-                  
-                </td>
-              </tr>
-              <tr>
-                <td>#EO-018</td>
-                <td>Emergency Order</td>
-                <td>Fredericton - Retail</td>
-                <td>2024-11-20</td>
-                <td>
-                  Re-Akt 200 Hockey Helmet Combo (x6),<br> Medium Cutlass (x2)
-                </td>
-                <td>$3,599.94</td>
-                <td>Light</td>
-                <!-- Total price: $399.99 * 6 + $350.00 * 2 -->
-                <td>
-                  <span class="status-badge status-processing">Processing</span>
-                </td>
-                <td>
-                  <button class="action-btn btn-primary">Send Delivery</button>
-                  
+                  <a href="process.html" class="action-btn btn-primary"
+                    >Process</a
+                  >
                 </td>
               </tr>
             </tbody>

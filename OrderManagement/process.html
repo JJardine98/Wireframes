@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="form.css" />
+    <title>Bullseye Sporting Goods - Process Order</title>
+  </head>
+  <body>
+    <div class="order-form-container">
+      <h1>Process Store Order</h1>
+      <form id="processOrderForm">
+        <!-- Order Information -->
+        <fieldset>
+          <legend>Order Information</legend>
+
+          <label for="orderNumber">Order Number:</label>
+          <input
+            type="text"
+            id="orderNumber"
+            name="orderNumber"
+            placeholder="e.g., 4567"
+            required
+          />
+
+          <label for="storeLocation">Store Location:</label>
+          <input
+            type="text"
+            id="storeLocation"
+            name="storeLocation"
+            placeholder="e.g., New York"
+            required
+          />
+
+          <label for="orderDate">Order Date:</label>
+          <input type="date" id="orderDate" name="orderDate" required />
+        </fieldset>
+
+        <!-- Items Table -->
+        <fieldset>
+          <legend>Items in Order</legend>
+          <table id="itemsTable">
+            <thead>
+              <tr>
+                <th>#</th>
+                <th>SKU</th>
+                <th>Item Name</th>
+                <th>Quantity</th>
+                <th>Unit Price ($)</th>
+                <th>Truck Size</th>
+                <th>Actions</th>
+              </tr>
+            </thead>
+            <tbody>
+              <tr>
+                <td>1</td>
+                <td>
+                  <input
+                    type="text"
+                    name="sku[]"
+                    placeholder="e.g., 60025"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="text"
+                    name="itemName[]"
+                    placeholder="e.g., Hockey Stick"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name="quantity[]"
+                    min="1"
+                    placeholder="e.g., 10"
+                    required
+                  />
+                </td>
+                <td>
+                  <input
+                    type="number"
+                    name="unitPrice[]"
+                    step="0.01"
+                    placeholder="e.g., 39.99"
+                    required
+                  />
+                </td>
+                <td>
+                  <select name="truckSize[]">
+                    <option value="Van">Van</option>
+                    <option value="Small">Small</option>
+                    <option value="Medium">Medium</option>
+                    <option value="Large">Large</option>
+                  </select>
+                </td>
+                <td>
+                  <button type="button" class="remove-item-button">
+                    Remove
+                  </button>
+                </td>
+              </tr>
+            </tbody>
+          </table>
+          <button type="button" id="addItemButton">Add Item</button>
+        </fieldset>
+
+        <!-- Submit Section -->
+        <div class="form-actions">
+          <button type="submit" class="primary-button">Submit Order</button>
+          <button type="button" class="secondary-button">Cancel</button>
+        </div>
+      </form>
+    </div>
+
+    <script src="form.js"></script>
+  </body>
+</html>
