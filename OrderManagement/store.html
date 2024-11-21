@@ -275,7 +275,7 @@
           </div>
 
           <div class="action-buttons">
-            <button class="submit-btn">Place Order</button>
+            <button class="submit-btn" id="place-order">Place Order</button>
             <button class="cancel-btn">Cancel</button>
           </div>
         </div>
@@ -428,6 +428,14 @@
           totalDisplay.textContent = `$${total.toFixed(2)}`;
         }
       });
+
+       // Select the button element
+  const button = document.getElementById('place-order');
+
+// Add a click event listener to navigate to another page
+button.addEventListener('click', () => {
+    window.location.href = 'store_orders.html'; // Replace with your desired HTML page
+});
     </script>
   </body>
 </html>

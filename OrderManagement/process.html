@@ -12,6 +12,7 @@
       <form id="processOrderForm">
         <!-- Order Information -->
         <fieldset>
+          <p>As soon as an order is being proccessed, the View Store order status for that order will change to processing.</p>
           <legend>Order Information</legend>
 
           <label for="orderNumber">Order Number:</label>
@@ -19,22 +20,39 @@
             type="text"
             id="orderNumber"
             name="orderNumber"
-            placeholder="e.g., 4567"
+            placeholder="SO-001"
             required
           />
 
           <label for="storeLocation">Store Location:</label>
           <input
             type="text"
-            id="storeLocation"
-            name="storeLocation"
-            placeholder="e.g., New York"
+            id="orderNumber"
+            name="orderNumber"
+            placeholder="Saint John - Retail"
             required
           />
+
+        <label for="trucks">Truck Size:</label>
+        <select name="truckSize[]">
+          <option value="Van">Van</option>
+          <option value="Small">Small</option>
+          <option value="Medium">Medium</option>
+          <option value="Large">Large</option>
+        </select>
 
           <label for="orderDate">Order Date:</label>
           <input type="date" id="orderDate" name="orderDate" required />
         </fieldset>
+
+        
+          
+        <input type="text" id="search-bar" placeholder="Scan Barcode to add an item" />
+        
+        <div>
+          <p>When a Barcode is scanned by the user, the SKU, Item Name and Unit Price is automatically added to the list, and the quantity is updated by 1. <br> Subsequent scanning of the same Barcode will increment the quantity further.</p>
+        </div>
+        
 
         <!-- Items Table -->
         <fieldset>
@@ -47,7 +65,6 @@
                 <th>Item Name</th>
                 <th>Quantity</th>
                 <th>Unit Price ($)</th>
-                <th>Truck Size</th>
                 <th>Actions</th>
               </tr>
             </thead>
@@ -88,14 +105,9 @@
                     required
                   />
                 </td>
-                <td>
-                  <select name="truckSize[]">
-                    <option value="Van">Van</option>
-                    <option value="Small">Small</option>
-                    <option value="Medium">Medium</option>
-                    <option value="Large">Large</option>
-                  </select>
-                </td>
+                
+                  
+                
                 <td>
                   <button type="button" class="remove-item-button">
                     Remove
@@ -109,7 +121,11 @@
 
         <!-- Submit Section -->
         <div class="form-actions">
-          <button type="submit" class="primary-button">Submit Order</button>
+          <p>When Mark Ready for Shipment is hit, the main status in the View Orders section will change to completed. <br> The appropriate size truck based on the order will be sent and everything will be palletized.</p>
+          <button type="button" class="secondary-button" id="shipment-button">
+            Mark Ready for Shipment
+        </button>
+            
           <button type="button" class="secondary-button">Cancel</button>
         </div>
       </form>

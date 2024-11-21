@@ -84,3 +84,13 @@ body {
     background: #c82333;
   }
   
+  #search-bar {
+    padding:5px;
+  }
+  .buttonn {
+    
+    padding:2px;
+    border: solid 1 px black;
+    border-radius:5px;
+    background-color:#b22222;
+  }

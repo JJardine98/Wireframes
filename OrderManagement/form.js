@@ -9,14 +9,6 @@ document.getElementById("addItemButton").addEventListener("click", () => {
         <td><input type="text" name="itemName[]" placeholder="e.g., Shoes" required /></td>
         <td><input type="number" name="quantity[]" min="1" placeholder="e.g., 10" required /></td>
         <td><input type="number" name="unitPrice[]" step="0.01" placeholder="e.g., 39.99" required /></td>
-        <td>
-          <select name="truckSize[]">
-            <option value="Van">Van</option>
-            <option value="Small">Small</option>
-            <option value="Medium">Medium</option>
-            <option value="Large">Large</option>
-          </select>
-        </td>
         <td><button type="button" class="remove-item-button">Remove</button></td>
       </tr>`;
     
@@ -34,3 +26,10 @@ document.getElementById("addItemButton").addEventListener("click", () => {
   // Initialize Remove Buttons
   updateRemoveButtons();
   
+  // Select the button element
+  const button = document.getElementById('shipment-button');
+
+  // Add a click event listener to navigate to another page
+  button.addEventListener('click', () => {
+      window.location.href = 'store_orders.html'; // Replace with your desired HTML page
+  });

@@ -191,7 +191,6 @@
         <a href="emergency.html" class="nav-item">Create Emergency Order</a>
         <a href="viewBackorders.html" class="nav-item">View Backorders</a>
         <a href="store_orders.html" class="nav-item">View Store / Emergency Orders</a>
-        <a href="fulfillment.html" class="nav-item">Order Fulfillment</a>
         <a href="shipping.html" class="nav-item">Shipping Receipt</a>
         <a href="../Dashboard/dashboard.html" class="nav-item">Dashboard</a>
     </nav>
@@ -280,7 +279,7 @@
           </div>
 
           <div class="action-buttons">
-            <button class="submit-btn">Place Order</button>
+            <button class="submit-btn" id="place-order">Place Order</button>
             <button class="cancel-btn">Cancel</button>
           </div>
         </div>
@@ -491,6 +490,14 @@
         taxDisplay.textContent = `$${tax.toFixed(2)}`;
         totalDisplay.textContent = `$${total.toFixed(2)}`;
       }
+
+       // Select the button element
+  const button = document.getElementById('place-order');
+
+// Add a click event listener to navigate to another page
+button.addEventListener('click', () => {
+    window.location.href = 'store_orders.html'; // Replace with your desired HTML page
+});
     </script>
   </body>
 </html>
