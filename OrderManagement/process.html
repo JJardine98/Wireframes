@@ -43,7 +43,27 @@
 
           <label for="orderDate">Order Date:</label>
           <input type="date" id="orderDate" name="orderDate" required />
+
+
         </fieldset>
+
+        <fieldset>
+          <legend>Items to Collect</legend>
+          <p>Below is the list of to be collected, scanned below and added to pallets for shipment:</p>
+          <ul id="itemList">
+            <li>#10013 - Vapor 1X Lite Griptac Senior Hockey Stick (Quantity: 12)</li>
+            <li>#10129 - Coleman 5" knife (Quantity: 10)</li>
+          </ul>
+        </fieldset>
+
+        <fieldset>
+          <legend>Items on Backorder</legend>
+          <p>These item(s) are currently unavailable for this order due to being on backorder</p>
+          <ul id="itemList">
+            <li>#10050 - Tacks 7092 Senior Hockey Gloves (Quantity: 8)</li>
+          </ul>
+        </fieldset>
+
 
         
           
@@ -121,7 +141,7 @@
 
         <!-- Submit Section -->
         <div class="form-actions">
-          <p>When Mark Ready for Shipment is hit, the main status in the View Orders section will change to completed. <br> The appropriate size truck based on the order will be sent and everything will be palletized.</p>
+          
           <button type="button" class="secondary-button" id="shipment-button">
             Mark Ready for Shipment
         </button>

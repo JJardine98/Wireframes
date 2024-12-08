@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Backorder Tracking</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      margin-bottom: 20px;
+    }
+
+    table, th, td {
+      border: 1px solid #ddd;
+    }
+
+    th, td {
+      padding: 10px;
+      text-align: left;
+    }
+
+    .btn {
+      padding: 8px 12px;
+      border: none;
+      color: white;
+      cursor: pointer;
+      text-decoration: none;
+      display: inline-block;
+    }
+
+    .btn-primary {
+      background-color: #007bff;
+    }
+
+    .btn-success {
+      background-color: #28a745;
+    }
+
+    .btn-danger {
+      background-color: #dc3545;
+    }
+
+    .btn-warning {
+      background-color: #ffc107;
+    }
+
+    .btn:disabled {
+      background-color: #cccccc;
+      cursor: not-allowed;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Backorder Tracking</h1>
+
+    <table>
+      <thead>
+        <tr>
+          <th>Order ID</th>
+          <th>Item</th>
+          <th>Quantity</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="backorderList">
+        <!-- Backordered Items Will Be Dynamically Loaded Here -->
+      </tbody>
+    </table>
+  </div>
+
+  <script>
+    // Mock Data for Backorders
+    const backorders = [
+      { orderId: "BO-001", item: "Tacks 7092 Senior Hockey Gloves", quantity: 8, status: "Pending" },
+      
+    ];
+
+    function loadBackorders() {
+      const backorderList = document.getElementById("backorderList");
+      backorderList.innerHTML = ""; // Clear existing rows
+
+      backorders.forEach((backorder, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${backorder.orderId}</td>
+          <td>${backorder.item}</td>
+          <td>${backorder.quantity}</td>
+          <td>
+            <select onchange="updateStatus(${index}, this.value)">
+              <option value="Pending" ${backorder.status === "Pending" ? "selected" : ""}>Pending</option>
+              <option value="Awaiting Supplier" ${backorder.status === "Awaiting Supplier" ? "selected" : ""}>Awaiting Supplier</option>
+              <option value="Received" ${backorder.status === "Received" ? "selected" : ""}>Received</option>
+            </select>
+          </td>
+          <td>
+            <button class="btn btn-success" onclick="markReceived(${index})" ${backorder.status === "Received" ? "disabled" : ""}>
+              Mark as Received
+            </button>
+          </td>
+        `;
+
+        backorderList.appendChild(row);
+      });
+    }
+
+    function updateStatus(index, status) {
+      backorders[index].status = status;
+      alert(`Status updated to "${status}" for ${backorders[index].item}`);
+      loadBackorders(); // Reload the table to reflect changes
+    }
+
+    function markReceived(index) {
+      backorders[index].status = "Received";
+      alert(`Item "${backorders[index].item}" marked as received.`);
+      loadBackorders(); // Reload the table to reflect changes
+    }
+
+    // Load backorders on page load
+    document.addEventListener("DOMContentLoaded", loadBackorders);
+  </script>
+</body>
+</html>

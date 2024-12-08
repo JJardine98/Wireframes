@@ -1,0 +1,230 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Edit Order</title>
+  <style>
+   body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 20px;
+  color: #333;
+}
+
+.container {
+  max-width: 800px;
+  margin: auto;
+  background: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Table Styles */
+table {
+  width: 100%;
+  border-collapse: collapse;
+  margin-bottom: 20px;
+}
+
+table, th, td {
+  border: 1px solid #ddd;
+}
+
+th, td {
+  padding: 10px;
+  text-align: left;
+}
+
+th {
+  background-color: #b00000; /* Bullseye Red */
+  color: white;
+  font-weight: bold;
+}
+
+tr:hover {
+  background-color: #f9f9f9;
+}
+
+/* Form Group */
+.form-group {
+  margin-bottom: 15px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 5px;
+}
+
+.form-group input,
+.form-group button {
+  width: 100%;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group input:focus,
+.form-group button:focus {
+  border-color: #b00000;
+  outline: none;
+  box-shadow: 0 0 5px rgba(176, 0, 0, 0.1);
+}
+
+/* Button Styles */
+.btn {
+  padding: 10px 12px;
+  color: white;
+  font-weight: bold;
+  text-align: center;
+  display: inline-block;
+  text-decoration: none;
+  transition: background-color 0.3s;
+  border-radius: 6px;
+  font-size: 16px;
+}
+
+.btn-primary {
+  background-color: #007bff;
+}
+
+.btn-danger {
+  background-color: #dc3545;
+}
+
+.btn-success {
+  background-color: #28a745;
+}
+
+.btn:hover {
+  opacity: 0.9;
+}
+
+.btn:disabled {
+  background-color: #cccccc;
+  cursor: not-allowed;
+}
+
+/* Subtle Button Shadows */
+.btn {
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
+}
+
+.btn:hover {
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+}
+
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>Edit Order</h1>
+    
+    <form id="editOrderForm">
+      <table>
+        <thead>
+          <tr>
+            <th>Item</th>
+            <th>Quantity</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody id="orderItems">
+          <!-- Existing items will be dynamically populated here -->
+        </tbody>
+      </table>
+
+      <h3>Add New Item</h3>
+      <div class="form-group">
+        <label for="newItemName">Item Name</label>
+        <input type="text" id="newItemName" placeholder="Enter item name" />
+      </div>
+      <div class="form-group">
+        <label for="newItemQuantity">Quantity</label>
+        <input type="number" id="newItemQuantity" placeholder="Enter quantity" />
+      </div>
+      <button type="button" class="btn btn-primary" onclick="addItem()">Add Item</button>
+    </form>
+
+    <button type="submit" class="btn btn-success" onclick="saveOrder()">Save Changes</button>
+  </div>
+
+  <script>
+    // Mock existing order data
+    const order = [
+      { name: "#10013 - Vapor 1X Lite Griptac Senior Hockey Stick", quantity: 12 },
+      { name: "#10129 - Coleman 5 knife", quantity: 10 },
+      { name: "#10050 - Tacks 7092 Senior Hockey Gloves", quantity: 8 },
+    ];
+
+    // Function to load existing order items
+    function loadOrderItems() {
+      const orderItems = document.getElementById("orderItems");
+      orderItems.innerHTML = "";
+
+      order.forEach((item, index) => {
+        const row = document.createElement("tr");
+
+        row.innerHTML = `
+          <td>${item.name}</td>
+          <td>
+            <input 
+              type="number" 
+              value="${item.quantity}" 
+              min="1"
+              onchange="updateQuantity(${index}, this.value)" 
+            />
+          </td>
+          <td>
+            <button class="btn btn-danger" onclick="removeItem(${index})">Remove</button>
+          </td>
+        `;
+
+        orderItems.appendChild(row);
+      });
+    }
+
+    // Function to update quantity of an item
+    function updateQuantity(index, value) {
+      order[index].quantity = parseInt(value, 10);
+    }
+
+    // Function to remove an item
+    function removeItem(index) {
+      order.splice(index, 1);
+      loadOrderItems();
+    }
+
+    // Function to add a new item
+    function addItem() {
+      const newItemName = document.getElementById("newItemName").value.trim();
+      const newItemQuantity = parseInt(document.getElementById("newItemQuantity").value, 10);
+
+      if (!newItemName || isNaN(newItemQuantity) || newItemQuantity <= 0) {
+        alert("Please provide valid item name and quantity.");
+        return;
+      }
+
+      order.push({ name: newItemName, quantity: newItemQuantity });
+      document.getElementById("newItemName").value = "";
+      document.getElementById("newItemQuantity").value = "";
+      loadOrderItems();
+    }
+
+    // Function to save the order
+    function saveOrder() {
+      //Send the user back to the store_order.html page
+      window.location.href = "store_orders.html";
+    }
+
+    // Load the initial order items on page load
+    document.addEventListener("DOMContentLoaded", loadOrderItems);
+  </script>
+</body>
+</html>

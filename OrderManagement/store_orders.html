@@ -200,6 +200,11 @@
         color: #856404;
       }
 
+      .status-new {
+        background-color: #f8d7da;
+        color: #721c24;
+      }
+
       .status-processing {
         background-color: #cce5ff;
         color: #004085;
@@ -282,9 +287,7 @@
         <a href="createSupplierOrder.html" class="nav-item">Create Supplier Order</a>
         <a href="store.html" class="nav-item">Create Store Order</a>
         <a href="emergency.html" class="nav-item">Create Emergency Order</a>
-        <a href="viewBackorders.html" class="nav-item">View Backorders</a>
-        <a href="store_orders.html" class="nav-item">View Store / Emergency Orders</a>
-        <a href="shipping.html" class="nav-item">Shipping Receipt</a>
+        <a href="store_orders.html" class="nav-item">View Orders</a>
         <a href="../Dashboard/dashboard.html" class="nav-item">Dashboard</a>
     </nav>
     </div>
@@ -315,6 +318,7 @@
             <option>Order Type: All</option>
             <option>Regular</option>
             <option>Emergency</option>
+            <option>Backorder</option>
           </select>
         </div>
 
@@ -339,14 +343,43 @@
                 <td>Saint John - Retail</td>
                 <td>2024-11-05</td>
 
-                <td>$3,399.90</td>
+                <td>$5029.83</td>
                 <!-- Total price: $339.99 * 10 + $399.99 * 10 -->
                 <td>
-                  <span class="status-badge status-pending">Pending</span>
+                  <select class="status-dropdown" name="status" id="statusDropdown">
+                    <option value="new" selected>New</option>
+                    <option value="submitted">Submitted</option>
+                    <option value="processing">Processing</option>
+                    <option value="assembled">Assembled</option>
+                    <option value="intransit">In Transit</option>
+                    <option value="delivered">Delivered</option>
+                    <option value="completed">Completed</option>
+                  </select>
                 </td>
                 <td>
-                  <a href="process.html" class="action-btn btn-primary"
-                    >Process</a
+                  <a href="process.html" class="action-btn btn-primary" id="actionButton"
+                    >Submit to Warehouse</a
+                  >
+                  <a href="edit.html" class="action-btn btn-primary" id="editButton"
+                    >Edit</a
+                  >
+                </td>
+              </tr>
+
+              <tr>
+                <td>#BO-001</td>
+                <td>Back Order</td>
+                <td>Saint John - Retail</td>
+                <td>2024-11-05</td>
+
+                <td>$1199.92</td>
+                <!-- Total price: $339.99 * 10 + $399.99 * 10 -->
+                <td>
+                  
+                </td>
+                <td>
+                  <a href="track.html" class="action-btn btn-primary" id="actionButton"
+                    >Track</a
                   >
                 </td>
               </tr>
@@ -355,17 +388,82 @@
         </div>
       </div>
 
-      <div class="card">
-        <a href="store.html" class="action-btn btn-primary"
-          >Create Store Order</a
-        >
-        <a href="createSupplierOrder.html" class="action-btn btn-primary"
-          >Create Supplier Order</a
-        >
-        <a href="emergency.html" class="action-btn btn-primary"
-          >Create Emergency Order</a
-        >
-      </div>
+      
     </div>
   </body>
 </html>
+
+<script>
+  document.addEventListener("DOMContentLoaded", () => {
+  const statusDropdown = document.getElementById("statusDropdown");
+  const actionButton = document.getElementById("actionButton");
+  const editButton = document.getElementById("editButton");
+
+  // Function to update the button based on the selected status
+  const updateButton = (status) => {
+    if (status === "new") {
+      actionButton.textContent = "Submit to Warehouse";
+      actionButton.className = "action-btn btn-primary";
+      actionButton.href = "#";
+      actionButton.disabled = false; // Enable button
+      editButton.href = "edit.html";
+      editButton.disabled = false;
+    } else if (status === "submitted") {
+      actionButton.textContent = "Recieve Order";
+      actionButton.className = "action-btn btn-primary";
+      actionButton.href = "recieve.html"; // Example: disable link functionality
+      actionButton.disabled = false; // Enable button
+      editButton.href = "#";
+      editButton.disabled = true;
+    } else if (status === "processing") {
+      actionButton.textContent = "Fulfill Order";
+      actionButton.className = "action-btn btn-primary";
+      actionButton.href = "process.html"; // Disable link
+      actionButton.disabled = false; // Disable button
+      editButton.href = "#";
+      editButton.disabled = true;
+    } else if (status === "assembled") {
+      actionButton.textContent = "Pickup Confirmation";
+      actionButton.className = "action-btn btn-primary";
+      actionButton.href = "acadia.html"; // Disable link
+      actionButton.disabled = true; // Disable button
+      editButton.href = "#";
+      editButton.disabled = true;
+    }
+    else if (status === "intransit") {
+      actionButton.textContent = "Confirm Delivery";
+      actionButton.className = "action-btn btn-primary";
+      actionButton.href = "delivery.html"; 
+      actionButton.disabled = true; // Disable button
+      editButton.href = "#";
+      editButton.disabled = true;
+    }
+    else if (status === "delivered") {
+      actionButton.textContent = "Complete Order";
+      actionButton.className = "action-btn btn-primary";
+      actionButton.href = "#"; // Disable link
+      actionButton.disabled = true; // Disable button
+      editButton.href = "#";
+      editButton.disabled = true;
+    }
+    else if (status === "completed") {
+      actionButton.textContent = "Create Report";
+      actionButton.className = "action-btn btn-primary";
+      actionButton.href = "../ReportManagement/index.html"; // Example: disable link functionalityDisable link
+      actionButton.disabled = false; // Disable button
+      editButton.href = "#";
+      editButton.disabled = true;
+    }
+  };
+
+  // Initial update based on default dropdown value
+  updateButton(statusDropdown.value);
+
+  // Event listener for dropdown changes
+  statusDropdown.addEventListener("change", (event) => {
+    const selectedStatus = event.target.value;
+    updateButton(selectedStatus);
+  });
+});
+
+</script>
